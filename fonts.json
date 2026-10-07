@@ -1,0 +1,19 @@
+{
+  "fonts": [
+    {
+      "family": "Jaapokki",
+      "style": "Regular",
+      "fontId": "C:\\USERS\\ARTHU\\APPDATA\\LOCAL\\MICROSOFT\\WINDOWS\\FONTS\\JAAPOKKI-REGULAR.OTF"
+    },
+    {
+      "family": "Jaapokki subtract",
+      "style": "Regular",
+      "fontId": "C:\\USERS\\ARTHU\\APPDATA\\LOCAL\\MICROSOFT\\WINDOWS\\FONTS\\JAAPOKKISUBTRACT-REGULAR.OTF"
+    },
+    {
+      "family": "Ubuntu",
+      "style": "Medium",
+      "fontId": "C:\\USERS\\ARTHU\\APPDATA\\LOCAL\\MICROSOFT\\WINDOWS\\FONTS\\UBUNTU-MEDIUM.TTF"
+    }
+  ]
+}

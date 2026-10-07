@@ -1,0 +1,154 @@
+@import 'tailwindcss';
+
+/* ── Ubuntu ── */
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url('/fonts/Ubuntu-Light.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: italic;
+  font-weight: 300;
+  font-display: swap;
+  src: url('/fonts/Ubuntu-LightItalic.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/Ubuntu-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/Ubuntu-Italic.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/fonts/Ubuntu-Medium.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/fonts/Ubuntu-MediumItalic.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/Ubuntu-Bold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/Ubuntu-BoldItalic.ttf') format('truetype');
+}
+
+/* ── Jaapokki ── */
+@font-face {
+  font-family: 'Jaapokki';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/Jaapokki-Regular.otf') format('opentype');
+}
+@font-face {
+  font-family: 'Jaapokki:Regular';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/Jaapokki-Regular.otf') format('opentype');
+}
+
+/* ── Jaapokki Subtract ── */
+@font-face {
+  font-family: 'Jaapokki subtract';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/Jaapokkisubtract-Regular.otf') format('opentype');
+}
+@font-face {
+  font-family: 'Jaapokki_subtract:Regular';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/Jaapokkisubtract-Regular.otf') format('opentype');
+}
+
+/* ── Jaapokki Enchance ── */
+@font-face {
+  font-family: 'Jaapokki enchance';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/Jaapokkienchance-Regular.otf') format('opentype');
+}
+
+
+@theme {
+  --color-brand-black: #080711;
+  --color-brand-dark: #121029;
+  --color-brand-orange: #ea8100;
+  --color-brand-orange-light: #ff941a;
+
+  --font-sans: 'Ubuntu', 'Outfit', 'Inter', sans-serif;
+  --font-display: 'Jaapokki', 'Jaapokki subtract', 'Anton', 'Syne', sans-serif;
+  
+  --font-jaapokki: 'Jaapokki', sans-serif;
+  --font-jaapokki-subtract: 'Jaapokki subtract', sans-serif;
+  --font-jaapokki-enchance: 'Jaapokki enchance', sans-serif;
+  --font-ubuntu: 'Ubuntu', sans-serif;
+}
+
+body {
+  @apply bg-brand-black text-white font-sans antialiased overflow-x-hidden;
+}
+
+/* Glassmorphism utility */
+.glass {
+  @apply bg-white/5 backdrop-blur-md border border-white/10;
+}
+
+/* Marquee animation */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 20s linear infinite;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Hide scrollbar but keep functionality */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-brand-black);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-brand-orange);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-brand-orange-light);
+}

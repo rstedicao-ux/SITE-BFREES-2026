@@ -1,0 +1,11 @@
+{
+  "title": "BFrees | Ideias que Ganham Vida",
+  "description": "Produtora e estúdio criativo focado em imersão, cenografia e eventos. Conectamos marcas e pessoas através de experiências memoráveis.",
+  "robots": {
+    "index": true
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
