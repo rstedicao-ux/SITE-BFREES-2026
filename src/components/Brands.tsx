@@ -3,12 +3,12 @@ import svgPaths from '@/imports/SecaoMarcas-1/svg-2j9j7ags04';
 import womanImg from '@/imports/SecaoMarcas-1/cc523b1780c4ce37f8f681ce819c9edd3f0f2357.png';
 
 // ─── Brand cards data ────────────────────────────────────────────────────────
-const BRANDS = [
+const BRANDS: { name: string; logo: string; fallback?: string; black?: boolean }[] = [
   { name: 'Abras', logo: '/logos/abras.svg' },
   { name: 'CHEP', logo: '/logos/chep.svg' },
   { name: 'Danone', logo: '/logos/danone.svg' },
   { name: 'DFM', logo: '/logos/dfm.svg' },
-  { name: 'Giovanna Baby', logo: '/logos/giovanna-baby.svg', fallback: '/logos/giovanny-baby.svg' },
+  { name: 'Giovanna Baby', logo: '/logos/giovanna-baby.svg', fallback: '/logos/giovanny-baby.svg', black: true },
   { name: 'HBR', logo: '/logos/hbr.svg' },
   { name: 'Medison', logo: '/logos/medison.png' },
   { name: 'Midea Carrier', logo: '/logos/midea-carrier.svg' },
@@ -287,9 +287,10 @@ const BrandCarousel: FC<CarouselProps> = ({ onOpenBudget }) => {
                     width: 'auto',
                     height: 'auto',
                     objectFit: 'contain',
-                    filter: isCenter
-                      ? 'drop-shadow(0 2px 6px rgba(0,0,0,0.06))'
-                      : 'none',
+                    filter: [
+                      brand.black ? 'brightness(0)' : '',
+                      isCenter ? 'drop-shadow(0 2px 6px rgba(0,0,0,0.06))' : '',
+                    ].filter(Boolean).join(' ') || 'none',
                     transition: 'all 0.2s ease',
                   }}
                   draggable={false}

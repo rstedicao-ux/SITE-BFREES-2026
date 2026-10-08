@@ -4,24 +4,28 @@ const SERVICES = [
   {
     id: 1,
     title: "PRODUÇÃO DE EVENTOS",
+    lines: ["PRODUÇÃO", "DE EVENTOS"],
     desc: "Do planejamento à entrega final. Cuidamos de cada detalhe logístico e técnico para garantir que o seu evento seja impecável.",
     img: "https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=800&auto=format&fit=crop"
   },
   {
     id: 2,
     title: "CRIAÇÃO DE ESTANDES",
+    lines: ["CRIAÇÃO", "DE ESTANDES"],
     desc: "Transformamos espectadores em participantes ativos. Criamos experiências dinâmicas que geram engajamento real e memórias de marca.",
     img: "https://images.unsplash.com/photo-1551818255-e6e10975bc17?q=80&w=800&auto=format&fit=crop"
   },
   {
     id: 3,
     title: "BRAND EXPERIENCE",
+    lines: ["BRAND", "EXPERIENCE"],
     desc: "Cenografia monumental e design de palco. Estruturas imersivas que impressionam visualmente e suportam operações complexas.",
     img: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=800&auto=format&fit=crop"
   },
   {
     id: 4,
     title: "ENDOMARKETING",
+    lines: ["ENDOMARKETING"],
     desc: "Registro de alta qualidade. Aftermovies, transmissões ao vivo e fotografia que capturam a verdadeira essência da sua entrega.",
     img: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=800&auto=format&fit=crop"
   }
@@ -54,9 +58,9 @@ export const Services: FC = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
               </div>
               
-              <div className="absolute inset-0 z-20 p-8 flex flex-col justify-end">
-                <h3 className="font-jaapokki-subtract text-3xl md:text-4xl text-white uppercase tracking-[-2px] mb-2 group-hover:text-brand-orange transition-colors whitespace-pre-wrap leading-tight">
-                  {srv.title.split(' ').map((word, i) => <span key={i} className="block">{word}</span>)}
+              <div className="absolute inset-0 z-20 p-8 lg:p-6 xl:p-8 flex flex-col justify-end">
+                <h3 className="font-ubuntu font-bold text-3xl lg:text-[length:clamp(18px,1.6vw,26px)] text-white uppercase tracking-tight leading-[1.1] mb-2 group-hover:text-brand-orange transition-colors whitespace-nowrap">
+                  {srv.lines.map((line, i) => <span key={i} className="block">{line}</span>)}
                 </h3>
                 
                 <div className="h-0 opacity-0 group-hover:h-[120px] group-hover:opacity-100 group-hover:mt-4 transition-all duration-700 ease-out overflow-hidden flex flex-col justify-end">

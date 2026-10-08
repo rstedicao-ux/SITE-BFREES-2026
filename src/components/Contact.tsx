@@ -20,6 +20,22 @@ export const Contact: FC = () => {
       onMouseMove={handleMouseMove}
       className="relative w-full min-h-screen bg-brand-black overflow-hidden py-24 md:py-32 flex items-center justify-center select-none"
     >
+      {/* Background video */}
+      <video
+        className="absolute inset-0 w-full h-full object-cover pointer-events-none"
+        src="/contato/contato-bg.mp4"
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="auto"
+        aria-hidden="true"
+      />
+
+      {/* Dark overlay for text legibility */}
+      <div className="absolute inset-0 pointer-events-none bg-gradient-to-r from-black/85 via-black/60 to-black/75" />
+      <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-black/70 via-transparent to-black/70" />
+
       {/* Interactive Background with parallax texture grid and mouse movement light glow */}
       <div 
         className="absolute inset-0 pointer-events-none transition-transform duration-200 ease-out"
