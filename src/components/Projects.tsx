@@ -246,16 +246,6 @@ export const Projects: FC<{ onOpenBudget?: () => void }> = ({ onOpenBudget }) =>
     return counts;
   }, []);
 
-  // Helper to determine text contrast based on background hex
-  const isDarkColor = (hex: string) => {
-    const c = hex.replace('#', '');
-    const r = parseInt(c.substring(0, 2), 16);
-    const g = parseInt(c.substring(2, 4), 16);
-    const b = parseInt(c.substring(4, 6), 16);
-    const brightness = (r * 299 + g * 587 + b * 114) / 1000;
-    return brightness < 125;
-  };
-
   return (
     <section id="projetos" className="py-24 sm:py-32 bg-[#e6e6e6] overflow-hidden text-left">
       {/* Top Header & Sector Filters */}
@@ -304,8 +294,6 @@ export const Projects: FC<{ onOpenBudget?: () => void }> = ({ onOpenBudget }) =>
       {/* Cases List */}
       <div className="w-full flex flex-col">
         {filteredCases.map((proj) => {
-          const isDark = isDarkColor(proj.bg);
-
           return (
             <div
               key={proj.id}
@@ -313,15 +301,15 @@ export const Projects: FC<{ onOpenBudget?: () => void }> = ({ onOpenBudget }) =>
               className="group relative w-full min-h-[380px] sm:min-h-[440px] md:min-h-[500px] flex items-center justify-center cursor-pointer overflow-hidden transition-all duration-500"
               style={{ backgroundColor: proj.bg }}
             >
-              {/* Background Cover Image on hover */}
-              <div className="absolute inset-0 z-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none">
+              {/* Background Cover Image (always visible) */}
+              <div className="absolute inset-0 z-0 pointer-events-none">
                 <img
                   src={proj.image}
-                  className="w-full h-full object-cover scale-105 group-hover:scale-100 transition-transform duration-1000"
+                  className="w-full h-full object-cover scale-100 group-hover:scale-105 transition-transform duration-1000"
                   alt={proj.title}
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/60 to-black/75"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/60 to-black/75 transition-opacity duration-700 group-hover:opacity-85"></div>
               </div>
 
               {/* Content Row */}
@@ -330,18 +318,12 @@ export const Projects: FC<{ onOpenBudget?: () => void }> = ({ onOpenBudget }) =>
                   {/* Category & Client Badge */}
                   <div className="flex flex-wrap items-center gap-2 sm:gap-3 mb-3">
                     <span
-                      className={`text-[11px] sm:text-xs font-ubuntu font-bold uppercase tracking-wider px-3 py-1 rounded-full transition-colors duration-300 ${
-                        isDark
-                          ? 'bg-white/15 text-white/90 group-hover:bg-[#ea8100] group-hover:text-white'
-                          : 'bg-black/10 text-black/80 group-hover:bg-[#ea8100] group-hover:text-white'
-                      }`}
+                      className="text-[11px] sm:text-xs font-ubuntu font-bold uppercase tracking-wider px-3 py-1 rounded-full transition-colors duration-300 bg-white/15 text-white/90 group-hover:bg-[#ea8100] group-hover:text-white"
                     >
                       {proj.category}
                     </span>
                     <span
-                      className={`text-xs sm:text-sm font-ubuntu transition-colors duration-300 ${
-                        isDark ? 'text-white/70 group-hover:text-white/80' : 'text-black/60 group-hover:text-white/80'
-                      }`}
+                      className="text-xs sm:text-sm font-ubuntu transition-colors duration-300 text-white/70 group-hover:text-white/80"
                     >
                       • {proj.tagline}
                     </span>
@@ -349,9 +331,7 @@ export const Projects: FC<{ onOpenBudget?: () => void }> = ({ onOpenBudget }) =>
 
                   {/* Main Case Title */}
                   <h3
-                    className={`font-jaapokki uppercase leading-[0.9] tracking-tight sm:tracking-[-3px] lg:tracking-[-4px] transition-colors duration-300 m-0 ${
-                      isDark ? 'text-white' : 'text-black'
-                    } group-hover:text-white text-3xl sm:text-5xl md:text-6xl lg:text-[75px]`}
+                    className="font-jaapokki uppercase leading-[0.9] tracking-tight sm:tracking-[-3px] lg:tracking-[-4px] transition-colors duration-300 m-0 text-white text-3xl sm:text-5xl md:text-6xl lg:text-[75px]"
                   >
                     {proj.title}
                   </h3>
@@ -370,11 +350,7 @@ export const Projects: FC<{ onOpenBudget?: () => void }> = ({ onOpenBudget }) =>
                   )}
 
                   <div
-                    className={`flex items-center gap-2 text-xs sm:text-sm font-ubuntu font-bold tracking-wider uppercase px-4 py-2 rounded-full border transition-all duration-300 ${
-                      isDark
-                        ? 'border-white/30 text-white group-hover:border-[#ea8100] group-hover:bg-[#ea8100] group-hover:text-white'
-                        : 'border-black/30 text-black group-hover:border-[#ea8100] group-hover:bg-[#ea8100] group-hover:text-white'
-                    }`}
+                    className="flex items-center gap-2 text-xs sm:text-sm font-ubuntu font-bold tracking-wider uppercase px-4 py-2 rounded-full border transition-all duration-300 border-white/30 text-white group-hover:border-[#ea8100] group-hover:bg-[#ea8100] group-hover:text-white"
                   >
                     <span>Ver Case</span>
                     <svg
