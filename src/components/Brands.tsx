@@ -8,7 +8,7 @@ const BRANDS = [
   { name: 'CHEP', logo: '/logos/chep.svg' },
   { name: 'Danone', logo: '/logos/danone.svg' },
   { name: 'DFM', logo: '/logos/dfm.svg' },
-  { name: 'Giovanna Baby', logo: '/logos/giovanna-baby.svg' },
+  { name: 'Giovanna Baby', logo: '/logos/giovanna-baby.svg', fallback: '/logos/giovanny-baby.svg' },
   { name: 'HBR', logo: '/logos/hbr.svg' },
   { name: 'Medison', logo: '/logos/medison.png' },
   { name: 'Midea Carrier', logo: '/logos/midea-carrier.svg' },
@@ -20,71 +20,130 @@ const BRANDS = [
   { name: 'Venâncio', logo: '/logos/venancio.svg' },
 ];
 
-// ─── Auto step carousel (leves pausas no card da frente, sem interação de mouse) ───
-function useAutoStepCarousel(count: number) {
-  const [displayPos, setDisplayPos] = useState(0);
-
-  useEffect(() => {
-    let animId: number;
-    let timeoutId: ReturnType<typeof setTimeout>;
-
-    let currentPos = 0;
-    const HOLD_TIME = 2300;       // Pausa / trava no card da frente por 2.3s
-    const TRANSITION_TIME = 950;  // Transição leve e suave de 950ms
-
-    // Easing suave (easeInOutCubic) para movimento leve
-    const easeInOutCubic = (t: number) =>
-      t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
-
-    const animateToNext = () => {
-      const startPos = currentPos;
-      const targetPos = currentPos + 1;
-      const startTime = performance.now();
-
-      const step = (now: number) => {
-        const elapsed = now - startTime;
-        const progress = Math.min(1, elapsed / TRANSITION_TIME);
-        const eased = easeInOutCubic(progress);
-
-        currentPos = startPos + eased * (targetPos - startPos);
-        setDisplayPos(currentPos);
-
-        if (progress < 1) {
-          animId = requestAnimationFrame(step);
-        } else {
-          currentPos = targetPos;
-          setDisplayPos(targetPos);
-          timeoutId = setTimeout(animateToNext, HOLD_TIME);
-        }
-      };
-
-      animId = requestAnimationFrame(step);
-    };
-
-    timeoutId = setTimeout(animateToNext, HOLD_TIME);
-
-    return () => {
-      cancelAnimationFrame(animId);
-      clearTimeout(timeoutId);
-    };
-  }, [count]);
-
-  return { displayPos };
+// Helper to compute circular relative distance between brand index and continuous position
+function getCircularDiff(i: number, continuousPos: number, count: number): number {
+  let diff = (i - (continuousPos % count)) % count;
+  if (diff < -count / 2) diff += count;
+  if (diff > count / 2) diff -= count;
+  return diff;
 }
 
-// ─── 3D Card Carousel ─────────────────────────────────────────────────────────
+// ─── Continuous 3D Card Carousel with smooth auto-step & drag support ─────────
 interface CarouselProps {
   onOpenBudget: () => void;
 }
 
 const BrandCarousel: FC<CarouselProps> = ({ onOpenBudget }) => {
   const COUNT = BRANDS.length;
-  const { displayPos } = useAutoStepCarousel(COUNT);
+  const [displayPos, setDisplayPos] = useState(0);
   const [hoveredIdx, setHoveredIdx] = useState<number | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
-  // Render 5 visible card slots: -2, -1, 0, +1, +2
-  const SLOTS = [-2, -1, 0, 1, 2];
+  // Drag state
+  const isDraggingRef = useRef(false);
+  const dragStartXRef = useRef(0);
+  const dragStartPosRef = useRef(0);
+  const currentPosRef = useRef(0);
+  const animIdRef = useRef<number>(0);
+  const timeoutIdRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  // Easing suave (easeInOutCubic)
+  const easeInOutCubic = (t: number) =>
+    t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+
+  const HOLD_TIME = 2300;       // Pausa no card da frente
+  const TRANSITION_TIME = 950;  // Transição suave
+
+  // Animate smoothly from one position to another
+  const animateTo = useCallback((fromPos: number, toPos: number, onComplete?: () => void) => {
+    cancelAnimationFrame(animIdRef.current);
+    const startTime = performance.now();
+
+    const step = (now: number) => {
+      const elapsed = now - startTime;
+      const progress = Math.min(1, elapsed / TRANSITION_TIME);
+      const eased = easeInOutCubic(progress);
+
+      const nextVal = fromPos + eased * (toPos - fromPos);
+      currentPosRef.current = nextVal;
+      setDisplayPos(nextVal);
+
+      if (progress < 1) {
+        animIdRef.current = requestAnimationFrame(step);
+      } else {
+        currentPosRef.current = toPos;
+        setDisplayPos(toPos);
+        if (onComplete) onComplete();
+      }
+    };
+
+    animIdRef.current = requestAnimationFrame(step);
+  }, []);
+
+  const scheduleNext = useCallback(() => {
+    if (timeoutIdRef.current) clearTimeout(timeoutIdRef.current);
+    timeoutIdRef.current = setTimeout(() => {
+      if (isDraggingRef.current) return;
+      const start = currentPosRef.current;
+      const target = Math.round(start) + 1;
+      animateTo(start, target, scheduleNext);
+    }, HOLD_TIME);
+  }, [animateTo]);
+
+  // Start auto-play
+  useEffect(() => {
+    scheduleNext();
+    return () => {
+      cancelAnimationFrame(animIdRef.current);
+      if (timeoutIdRef.current) clearTimeout(timeoutIdRef.current);
+    };
+  }, [scheduleNext]);
+
+  // Drag interactions
+  const handlePointerDown = (e: React.PointerEvent) => {
+    isDraggingRef.current = true;
+    dragStartXRef.current = e.clientX;
+    dragStartPosRef.current = currentPosRef.current;
+    cancelAnimationFrame(animIdRef.current);
+    if (timeoutIdRef.current) clearTimeout(timeoutIdRef.current);
+    (e.currentTarget as HTMLElement).setPointerCapture(e.pointerId);
+  };
+
+  const handlePointerMove = (e: React.PointerEvent) => {
+    if (!isDraggingRef.current) return;
+    const deltaX = e.clientX - dragStartXRef.current;
+    // 260px per slot, drag left moves forward (+), drag right moves backward (-)
+    const deltaPos = -deltaX / 260;
+    const newPos = dragStartPosRef.current + deltaPos;
+    currentPosRef.current = newPos;
+    setDisplayPos(newPos);
+  };
+
+  const handlePointerUp = (e: React.PointerEvent) => {
+    if (!isDraggingRef.current) return;
+    isDraggingRef.current = false;
+    try {
+      (e.currentTarget as HTMLElement).releasePointerCapture(e.pointerId);
+    } catch {
+      // ignore
+    }
+    // Snap to nearest whole card
+    const target = Math.round(currentPosRef.current);
+    animateTo(currentPosRef.current, target, scheduleNext);
+  };
+
+  const handleCardClick = (brandIdx: number, absDist: number) => {
+    if (absDist < 0.35) {
+      onOpenBudget();
+    } else {
+      // Clicking a side card snaps it to center
+      cancelAnimationFrame(animIdRef.current);
+      if (timeoutIdRef.current) clearTimeout(timeoutIdRef.current);
+      const diff = getCircularDiff(brandIdx, currentPosRef.current, COUNT);
+      const target = currentPosRef.current + diff;
+      animateTo(currentPosRef.current, target, scheduleNext);
+    }
+  };
 
   return (
     <div
@@ -98,46 +157,48 @@ const BrandCarousel: FC<CarouselProps> = ({ onOpenBudget }) => {
         height: 360,
         perspective: '1200px',
         perspectiveOrigin: '50% 80%',
+        touchAction: 'pan-y',
+        cursor: isDraggingRef.current ? 'grabbing' : 'grab',
       }}
+      onPointerDown={handlePointerDown}
+      onPointerMove={handlePointerMove}
+      onPointerUp={handlePointerUp}
+      onPointerCancel={handlePointerUp}
     >
-      {SLOTS.map((slot) => {
-        // slot=0 is center; actual brand index wraps around
-        const fracOffset = displayPos - Math.round(displayPos) + slot;
-        const brandIdx = ((Math.round(displayPos) + slot) % COUNT + COUNT) % COUNT;
-        const brand = BRANDS[brandIdx];
-
-        // distance from center (signed)
-        const dist = fracOffset;
+      {BRANDS.map((brand, brandIdx) => {
+        // Continuous circular distance from center
+        const dist = getCircularDiff(brandIdx, displayPos, COUNT);
         const absDist = Math.abs(dist);
 
-        // How much to spread cards: center at 50% width = 650px
+        // Don't render cards that are out of visible arc
+        if (absDist > 3.2) return null;
+
+        // How much to spread cards: center at 50% width
         const X_SPREAD = 260; // px per slot
         const translateX = dist * X_SPREAD;
 
         // Z depth: center card pops forward
-        const translateZ = absDist < 0.5 ? 60 * (1 - absDist * 2) : -60 * (absDist - 0.5);
+        const translateZ = absDist < 0.5 ? 65 * (1 - absDist * 2) : -60 * (absDist - 0.5);
 
         // Y rotation: slight tilt based on position
         const rotateY = -dist * 18;
 
         // Scale: center = 1, fade out sides
-        const scale = Math.max(0.28, 1 - absDist * 0.28);
+        const scale = Math.max(0.28, 1 - absDist * 0.26);
 
         // Opacity: fade far sides
-        const opacity = Math.max(0.15, 1 - absDist * 0.35);
+        const opacity = Math.max(0, 1 - absDist * 0.32);
 
         // Blur far cards
-        const blur = Math.max(0, absDist - 0.4) * 3;
+        const blur = Math.max(0, absDist - 0.45) * 3;
 
         // Card size
-        const isCenter = absDist < 0.3;
+        const isCenter = absDist < 0.35;
         const W = 323;
         const H = 286;
 
         // Hover tilt
         const isHovered = hoveredIdx === brandIdx && absDist < 0.5;
-        const hoverTiltX = 0;
-        const hoverTiltY = 0;
         const hoverY = isHovered ? -8 : 0;
         const hoverScale = isHovered ? 1.05 : 1;
 
@@ -145,15 +206,12 @@ const BrandCarousel: FC<CarouselProps> = ({ onOpenBudget }) => {
         const shadowBlur = isCenter ? 60 : 20 * scale;
         const shadowOpacity = isCenter ? 0.35 : 0.15 * scale;
 
-        // z-index: center in front
-        const zIndex = Math.round(100 - absDist * 30);
-
-        // Don't render cards that are too far away
-        if (absDist > 2.6) return null;
+        // z-index: center always on top, smoothly layered
+        const zIndex = Math.round(100 - absDist * 25);
 
         return (
           <div
-            key={`${slot}-${brandIdx}`}
+            key={brand.name}
             style={{
               position: 'absolute',
               left: '50%',
@@ -162,15 +220,17 @@ const BrandCarousel: FC<CarouselProps> = ({ onOpenBudget }) => {
               height: H,
               marginLeft: -W / 2,
               marginTop: -H / 2,
-              transform: `translateX(${translateX}px) translateZ(${translateZ}px) rotateY(${rotateY + hoverTiltY}deg) rotateX(${hoverTiltX}deg) translateY(${hoverY}px) scale(${scale * hoverScale})`,
+              transform: `translateX(${translateX}px) translateZ(${translateZ}px) rotateY(${rotateY}deg) translateY(${hoverY}px) scale(${scale * hoverScale})`,
               opacity,
               filter: `blur(${blur}px)`,
               zIndex,
-              transition: isHovered ? 'transform 0.15s ease-out' : undefined,
-              cursor: 'pointer',
+              cursor: isCenter ? 'pointer' : 'pointer',
               willChange: 'transform, opacity',
             }}
-            onClick={onOpenBudget}
+            onClick={(e) => {
+              e.stopPropagation();
+              handleCardClick(brandIdx, absDist);
+            }}
             onMouseEnter={() => setHoveredIdx(brandIdx)}
             onMouseLeave={() => setHoveredIdx(null)}
           >
@@ -205,7 +265,7 @@ const BrandCarousel: FC<CarouselProps> = ({ onOpenBudget }) => {
                 pointerEvents: 'none',
               }} />
 
-              {/* Brand Logo (letterings removed as requested) */}
+              {/* Brand Logo */}
               <div
                 style={{
                   position: 'absolute',
@@ -233,6 +293,12 @@ const BrandCarousel: FC<CarouselProps> = ({ onOpenBudget }) => {
                     transition: 'all 0.2s ease',
                   }}
                   draggable={false}
+                  onError={(e) => {
+                    const img = e.currentTarget;
+                    if (brand.fallback && img.src !== brand.fallback && !img.src.endsWith(brand.fallback)) {
+                      img.src = brand.fallback;
+                    }
+                  }}
                 />
               </div>
 
