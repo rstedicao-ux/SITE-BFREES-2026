@@ -467,12 +467,14 @@ export const Brands: FC<{ onOpenBudget: () => void }> = ({ onOpenBudget }) => {
             width: 455,
             zIndex: 30,
           }}>
-          Transformamos estratégias em experiências que conectam marcas e pessoas. Cada projeto é uma história de criatividade, propósito e resultados reais.
+          Eventos, estandes, ativações e experiências de marca criados para
+          conectar pessoas, fortalecer marcas e transformar estratégias em
+          experiências reais.
         </p>
 
 
 
-{/* ── 3D Brand Carousel (z-20, in front of woman z-10) ── */}
+        {/* ── 3D Brand Carousel (z-20, in front of woman z-10) ── */}
         <div className="absolute" style={{ zIndex: 20 }}>
           <BrandCarousel onOpenBudget={onOpenBudget} />
         </div>
@@ -487,10 +489,10 @@ export const Brands: FC<{ onOpenBudget: () => void }> = ({ onOpenBudget }) => {
 
         {/* ── Bottom icon circles with icons from Figma ── */}
         {[
-          { left: 120, icon: '/icon-lampada.svg',      iconW: 54, iconH: 65, iconTop: 17, iconLeft: 23 },
-          { left: 519, icon: '/icon-negocio.svg',      iconW: 70, iconH: 51, iconTop: 24, iconLeft: 15 },
+          { left: 120, icon: '/icon-lampada.svg', iconW: 54, iconH: 65, iconTop: 17, iconLeft: 23 },
+          { left: 519, icon: '/icon-negocio.svg', iconW: 70, iconH: 51, iconTop: 24, iconLeft: 15 },
           { left: 969, icon: '/icon-apresentacao.svg', iconW: 61, iconH: 61, iconTop: 19, iconLeft: 19 },
-          { left: 1419, icon: '/icon-coracao.svg',     iconW: 66, iconH: 57, iconTop: 21, iconLeft: 17 },
+          { left: 1419, icon: '/icon-coracao.svg', iconW: 66, iconH: 57, iconTop: 21, iconLeft: 17 },
         ].map(({ left, icon, iconW, iconH, iconTop, iconLeft }, i) => (
           <div key={i} className="absolute" style={{ left, top: 1158, width: 99, height: 99, zIndex: 30 }}>
             <svg width="99" height="99" viewBox="0 0 99 99" fill="none">
@@ -515,11 +517,11 @@ export const Brands: FC<{ onOpenBudget: () => void }> = ({ onOpenBudget }) => {
 
         {/* ── Bottom stats columns ── */}
         {[
-          { left: 254, title: 'Criatividade\ncom propósito', body: 'Ideias que eles têm\ne geram impacto real.' },
-          { left: 653, title: 'Parcerias que\ntransformam', body: 'Trabalhamos lado a lado com grandes marcas.' },
-          { left: 1103, title: 'incomum que\nfalam por si', body: 'Estratégia, execução e resultados mensuráveis.' },
-          { left: 1553, title: 'Experiências que ficam na memória', body: 'Criamos momentos que marcam e inspiram.' },
-        ].map(({ left, title, body }, i) => (
+          { left: 254, titleW: 190, bodyW: 195, title: 'Criatividade\ncom propósito', body: 'Ideias que saem do papel e ganham forma em experiências reais.' },
+          { left: 653, titleW: 230, bodyW: 235, title: 'Parcerias que\nconstroem', body: 'Trabalhamos lado a lado com clientes, fornecedores e parceiros em cada etapa.' },
+          { left: 1103, titleW: 230, bodyW: 235, title: 'Execução que\nfaz acontecer', body: 'Estratégia, produção e operação conectadas do início ao fim.' },
+          { left: 1553, titleW: 260, bodyW: 260, title: 'Experiências\nque ficam', body: 'Criamos momentos que aproximam pessoas e fortalecem marcas.' },
+        ].map(({ left, titleW, bodyW, title, body }, i) => (
           <div key={i}>
             <p className="absolute"
               style={{
@@ -530,7 +532,7 @@ export const Brands: FC<{ onOpenBudget: () => void }> = ({ onOpenBudget }) => {
                 color: 'white',
                 left,
                 top: 1155,
-                width: i === 3 ? 244 : i === 2 ? 193 : 167,
+                width: titleW,
                 whiteSpace: 'pre-wrap',
                 zIndex: 30,
               }}>
@@ -545,7 +547,7 @@ export const Brands: FC<{ onOpenBudget: () => void }> = ({ onOpenBudget }) => {
                 color: 'white',
                 left,
                 top: 1219,
-                width: i === 0 ? 182 : 193,
+                width: bodyW,
                 whiteSpace: 'pre-wrap',
                 zIndex: 30,
               }}>

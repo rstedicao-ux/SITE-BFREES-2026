@@ -76,14 +76,14 @@ export const Contact: FC = () => {
               transform: `translate3d(${mousePos.x * -15}px, ${mousePos.y * -15}px, 0)`,
             }}
           >
-            <h2 className="font-['Jaapokki:Regular',sans-serif] text-6xl sm:text-7xl md:text-8xl lg:text-[110px] xl:text-[130px] font-normal leading-[0.85] text-white tracking-tight uppercase">
-              Get in<br />
+            <h2 className="font-['Jaapokki:Regular',sans-serif] text-5xl sm:text-6xl md:text-7xl lg:text-[85px] xl:text-[100px] font-normal leading-[0.95] text-white tracking-tight uppercase">
+              Vamos tirar seu projeto<br />
               <span className="text-brand-orange drop-shadow-[0_0_25px_rgba(234,129,0,0.4)]">
-                touch.
+                do papel?
               </span>
             </h2>
-            <p className="font-['Ubuntu:Medium',sans-serif] text-white/60 text-lg md:text-xl mt-8 max-w-md">
-              Pronto para transformar sua próxima experiência ou evento corporativo em algo verdadeiramente inesquecível?
+            <p className="font-['Ubuntu:Medium',sans-serif] text-white/70 text-base md:text-lg mt-8 max-w-lg leading-relaxed">
+              Tem um evento, estande, ativação ou projeto especial em mente? Conte para a gente o desafio. Vamos construir juntos uma experiência que faça sentido para a sua marca e para o seu público.
             </p>
           </div>
 
@@ -96,53 +96,53 @@ export const Contact: FC = () => {
           >
             <div className="space-y-10">
               
-              {/* Address */}
+              {/* Localização */}
               <div className="flex items-start gap-6 group">
                 <div className="w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center p-3 shrink-0 group-hover:border-brand-orange/50 transition-colors">
-                  <img src={imgHomeAddress} alt="Address" className="w-full h-full object-contain filter invert opacity-90 group-hover:opacity-100 transition-opacity" />
+                  <img src={imgHomeAddress} alt="Localização" className="w-full h-full object-contain filter invert opacity-90 group-hover:opacity-100 transition-opacity" />
                 </div>
                 <div>
-                  <h3 className="font-sans font-medium text-2xl md:text-3xl text-white mb-2">Address</h3>
+                  <h3 className="font-sans font-medium text-2xl md:text-3xl text-white mb-2">Localização</h3>
                   <p className="font-sans text-white/70 text-lg md:text-xl leading-relaxed">
                     São Paulo, SP<br />
-                    Atendimento Global e Presencial
+                    Atendimento em todo o Brasil
                   </p>
                 </div>
               </div>
 
-              {/* Phone */}
+              {/* Telefone */}
               <div className="flex items-start gap-6 group">
                 <div className="w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center p-3 shrink-0 group-hover:border-brand-orange/50 transition-colors">
-                  <img src={imgPhone} alt="Phone" className="w-full h-full object-contain filter invert opacity-90 group-hover:opacity-100 transition-opacity" />
+                  <img src={imgPhone} alt="Telefone" className="w-full h-full object-contain filter invert opacity-90 group-hover:opacity-100 transition-opacity" />
                 </div>
                 <div>
-                  <h3 className="font-sans font-medium text-2xl md:text-3xl text-white mb-2">Phone</h3>
+                  <h3 className="font-sans font-medium text-2xl md:text-3xl text-white mb-2">Telefone</h3>
                   <a href="https://wa.me/5511999999999" target="_blank" rel="noreferrer" className="font-sans text-white/70 text-lg md:text-xl hover:text-brand-orange transition-colors">
                     +55 11 99999-9999
                   </a>
                 </div>
               </div>
 
-              {/* Mail */}
+              {/* E-mail */}
               <div className="flex items-start gap-6 group">
                 <div className="w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center p-3 shrink-0 group-hover:border-brand-orange/50 transition-colors">
-                  <img src={imgCircledEnvelope} alt="Mail" className="w-full h-full object-contain filter invert opacity-90 group-hover:opacity-100 transition-opacity" />
+                  <img src={imgCircledEnvelope} alt="E-mail" className="w-full h-full object-contain filter invert opacity-90 group-hover:opacity-100 transition-opacity" />
                 </div>
                 <div>
-                  <h3 className="font-sans font-medium text-2xl md:text-3xl text-white mb-2">Mail</h3>
+                  <h3 className="font-sans font-medium text-2xl md:text-3xl text-white mb-2">E-mail</h3>
                   <a href="mailto:contato@bfrees.com.br" className="font-sans text-white/70 text-lg md:text-xl hover:text-brand-orange transition-colors">
                     contato@bfrees.com.br
                   </a>
                 </div>
               </div>
 
-              {/* Follow Us */}
+              {/* Siga a BFrees */}
               <div className="flex items-start gap-6 group">
                 <div className="w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center p-3 shrink-0 group-hover:border-brand-orange/50 transition-colors">
-                  <img src={imgGoodQuality} alt="Follow Us" className="w-full h-full object-contain filter invert opacity-90 group-hover:opacity-100 transition-opacity" />
+                  <img src={imgGoodQuality} alt="Siga a BFrees" className="w-full h-full object-contain filter invert opacity-90 group-hover:opacity-100 transition-opacity" />
                 </div>
                 <div>
-                  <h3 className="font-sans font-medium text-2xl md:text-3xl text-white mb-3">Follow Us</h3>
+                  <h3 className="font-sans font-medium text-2xl md:text-3xl text-white mb-3">Siga a BFrees</h3>
                   <div className="flex items-center gap-4">
                     <a 
                       href="https://linkedin.com/company/bfrees" 

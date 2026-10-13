@@ -22,10 +22,30 @@ export const NadaGenerico: FC<{ onOpenBudget: () => void }> = ({ onOpenBudget })
         {/* Action Button */}
         <button
           onClick={onOpenBudget}
-          className="px-10 py-2.5 rounded-[45px] border border-black text-black font-['Jaapokki_subtract:Regular','Jaapokki subtract',sans-serif] text-xl sm:text-2xl uppercase hover:bg-black hover:text-white transition-all hover:scale-105 active:scale-95"
+          className="px-10 py-2.5 rounded-[45px] border border-black text-black font-['Jaapokki_subtract:Regular','Jaapokki subtract',sans-serif] text-xl sm:text-2xl uppercase hover:bg-black hover:text-white transition-all hover:scale-105 active:scale-95 cursor-pointer"
         >
           ORÇAMENTO
         </button>
+
+        {/* ── Bloco Conheça Nossos Projetos (conforme PDF Pág. 24) ── */}
+        <div className="mt-14 pt-12 border-t border-black/10 flex flex-col items-center max-w-4xl text-center">
+          <h3 className="font-['Jaapokki:Regular','Jaapokki',sans-serif] text-2xl sm:text-4xl md:text-5xl text-[#ea8100] uppercase tracking-normal leading-[1.1] mb-4">
+            Ideias que ganham forma.<br />
+            <span className="text-[#24214d]">Marcas que viram experiência.</span>
+          </h3>
+          <p className="font-['Ubuntu',sans-serif] text-base sm:text-xl text-black/75 max-w-2xl mb-8 leading-relaxed">
+            Criamos e produzimos eventos, estandes, ativações e experiências de marca do conceito à execução.
+          </p>
+          <a
+            href="#projetos"
+            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-[#ea8100] text-white font-['Ubuntu',sans-serif] font-bold text-sm sm:text-base tracking-wider uppercase hover:bg-black transition-all hover:scale-105 active:scale-95 shadow-lg shadow-[#ea8100]/25"
+          >
+            <span>Conheça Nossos Projetos</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </a>
+        </div>
       </div>
     </section>
   );

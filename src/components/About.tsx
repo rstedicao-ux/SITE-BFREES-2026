@@ -106,7 +106,7 @@ export const About: FC<{ onOpenBudget: () => void }> = ({ onOpenBudget }) => {
           width: 183,
           fontFamily: "'Ubuntu', sans-serif", fontWeight: 400, fontSize: 40,
           color: '#000000', margin: 0,
-        }}>About Us</p>
+        }}>Sobre a Bfrees</p>
 
         {/* "We Always Make The Best" */}
         <p style={{
@@ -115,7 +115,7 @@ export const About: FC<{ onOpenBudget: () => void }> = ({ onOpenBudget }) => {
           fontFamily: "'Ubuntu', sans-serif", fontWeight: 500, fontSize: 64,
           lineHeight: 1.1, color: '#000000', margin: 0,
         }}>
-          We Always Make The Best
+          Transformamos estratégia em experiência.
         </p>
 
         {/* Body text */}
@@ -125,10 +125,11 @@ export const About: FC<{ onOpenBudget: () => void }> = ({ onOpenBudget }) => {
           fontFamily: "'Ubuntu', sans-serif", fontWeight: 400, fontSize: 22,
           lineHeight: 1.5, color: '#000000', margin: 0,
         }}>
-          A BFrees (Onze30) não é apenas uma produtora; somos um estúdio
-          criativo focado em imersão. Nossa estrutura nos permite desenhar
-          soluções sob medida, com fluidez entre conceito e execução, sempre
-          guiados pela estética e pelo propósito.
+          A BFrees é uma produtora de eventos e brand experience que cria experiências
+          presenciais para aproximar marcas e pessoas. Atuamos em feiras e estandes, eventos
+          corporativos, convenções, lançamentos, exposições e projetos especiais, sempre
+          buscando traduzir a essência e os objetivos de cada marca em experiências relevantes
+          para o público.
         </p>
 
         {/* Botão "Contate-nos" */}
@@ -154,7 +155,7 @@ export const About: FC<{ onOpenBudget: () => void }> = ({ onOpenBudget }) => {
           fontFamily: "'Ubuntu', sans-serif", fontWeight: 500, fontSize: 64,
           lineHeight: 1.1, color: '#000000', margin: 0,
         }}>
-          Our Skills
+          Nossa Expertise
         </p>
 
         <p style={{
@@ -163,9 +164,10 @@ export const About: FC<{ onOpenBudget: () => void }> = ({ onOpenBudget }) => {
           fontFamily: "'Ubuntu', sans-serif", fontWeight: 400, fontSize: 25,
           lineHeight: 1.5, color: '#000000', margin: 0,
         }}>
-          Cada entrega reflete a excelência técnica e criativa que construímos
-          ao longo de anos de mercado, sempre buscando superar expectativas e
-          entregar resultados que movimentam marcas.
+          Para fazer cada projeto acontecer, reunimos diferentes frentes em uma operação
+          integrada. Atuamos com cenografia e projetos 3D, produção, tecnologia e audiovisual,
+          ativações, hospitalidade, credenciamento e gestão de fornecedores, acompanhando
+          todas as etapas para garantir uma entrega consistente do planejamento à operação.
         </p>
 
         {/* ── 5. BLOCO ROXO/AZUL (#24214D) — renderizado ANTES do card CTA para ficar abaixo ── */}
@@ -224,7 +226,7 @@ export const About: FC<{ onOpenBudget: () => void }> = ({ onOpenBudget }) => {
           letterSpacing: '0.02em',
           textShadow: '0 2px 8px rgba(0,0,0,0.6)',
         }}>
-          Hire Us Now
+          Seu próximo projeto pode começar aqui.
         </p>
 
         {/* "We Are Always Ready To Take A Perfect Shot" — texto BRANCO */}
@@ -242,7 +244,8 @@ export const About: FC<{ onOpenBudget: () => void }> = ({ onOpenBudget }) => {
           zIndex: 2,
           textShadow: '0 2px 12px rgba(0,0,0,0.7)',
         }}>
-          We Are Always Ready To<br />Take A Perfect Shot
+          Conte para a gente o desafio, o objetivo e onde você quer chegar. <br />A BFrees transforma
+          isso em uma experiência pensada para acontecer de verdade.
         </p>
 
         {/* Botão "Get Started" — borda e texto BRANCOS */}
@@ -267,7 +270,7 @@ export const About: FC<{ onOpenBudget: () => void }> = ({ onOpenBudget }) => {
             transition: 'all 0.3s ease',
           }}
         >
-          Get Started
+          Fale com a Bfrees
         </button>
 
 

@@ -5,28 +5,28 @@ const SERVICES = [
     id: 1,
     title: "PRODUÇÃO DE EVENTOS",
     lines: ["PRODUÇÃO", "DE EVENTOS"],
-    desc: "Do planejamento à entrega final. Cuidamos de cada detalhe logístico e técnico para garantir que o seu evento seja impecável.",
+    desc: "Planejamento, produção executiva e operação de ponta a ponta.",
     img: "https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=800&auto=format&fit=crop"
   },
   {
     id: 2,
-    title: "CRIAÇÃO DE ESTANDES",
-    lines: ["CRIAÇÃO", "DE ESTANDES"],
-    desc: "Transformamos espectadores em participantes ativos. Criamos experiências dinâmicas que geram engajamento real e memórias de marca.",
+    title: "FEIRAS & ESTANDES",
+    lines: ["FEIRAS &", "ESTANDES"],
+    desc: "Projetos de espaços, cenografia e experiências para presença de marca em feiras.",
     img: "https://images.unsplash.com/photo-1551818255-e6e10975bc17?q=80&w=800&auto=format&fit=crop"
   },
   {
     id: 3,
     title: "BRAND EXPERIENCE",
     lines: ["BRAND", "EXPERIENCE"],
-    desc: "Cenografia monumental e design de palco. Estruturas imersivas que impressionam visualmente e suportam operações complexas.",
+    desc: "Ativações, lançamentos e experiências criadas para aproximar marcas e pessoas.",
     img: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=800&auto=format&fit=crop"
   },
   {
     id: 4,
-    title: "ENDOMARKETING",
-    lines: ["ENDOMARKETING"],
-    desc: "Registro de alta qualidade. Aftermovies, transmissões ao vivo e fotografia que capturam a verdadeira essência da sua entrega.",
+    title: "EVENTOS CORPORATIVOS",
+    lines: ["EVENTOS", "CORPORATIVOS"],
+    desc: "Convenções, encontros, ações internas e projetos voltados a relacionamento e engajamento.",
     img: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=800&auto=format&fit=crop"
   }
 ];
@@ -41,9 +41,9 @@ export const Services: FC = () => {
             estratégia criativa
           </h2>
           <p className="font-ubuntu text-white/80 max-w-xl text-lg leading-relaxed pt-4 border-l-2 border-brand-orange pl-8">
-            Na Onze30, a estratégia criativa nasce da escuta atenta e da colaboração direta com marcas e agências. Acreditamos que grandes histórias são construídas com clareza de intenção. 
+            Na BFrees, cada projeto começa pela escuta, pelo entendimento do desafio e pela construção conjunta com o cliente.
             <br/><br/>
-            Somos uma produtora com olhar de agência e atuação full service.
+            Unimos estratégia, criação e produção para transformar ideias em experiências relevantes, funcionais e alinhadas aos objetivos de cada marca.
           </p>
         </div>
 
