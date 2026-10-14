@@ -111,7 +111,7 @@ const CASES_DATA: CaseItem[] = [
     client: 'HBR',
     clientLogo: '/logos/hbr.svg',
     tagline: 'Presença Comercial & Relacionamento de Negócios',
-    desc: 'Na ABF, criamos para a HBR um espaço pensado para apresentar de forma clara o seu portfólio de empreendimentos e as oportunidades comerciais disponíveis em diferentes ativos administrados pela empresa. Como o público da feira é formado por marcas, franqueadores, investidores e operadores em busca de novos pontos, o estande precisava funcionar não só como presença institucional, mas principalmente como um ambiente de relacionamento e geração de negócios. Organizamos a experiência para facilitar a conversa com o público e aproximar potenciais parceiros das possibilidades oferecidas pela HBR.',
+    desc: 'Na ABF, criamos para a HBR um espaço pensado para apresentar de forma clara o seu portfólio de empreendimentos e as oportunidades comerciais disponíveis em diferentes ativos administrados pela empresa. Como o público da feira é formado por marcas, franqueadores, investidores e operadores em busca de novos pontos, o estande precisava funcionar não só como presença institucional, mas principalmente como um ambiente de relacionamento e geração de negócios.\n\nOrganizamos a experiência para facilitar a conversa com o público e aproximar potenciais parceiros das possibilidades oferecidas pela HBR. A proposta era transformar informações sobre localização, perfil dos empreendimentos e oportunidades de ocupação em uma apresentação mais acessível, criando um espaço que ajudasse o time comercial a conduzir reuniões, apresentar o portfólio e abrir novas conversas ao longo da feira.\n\nDo conceito do espaço à produção e operação, nosso trabalho foi criar uma presença que traduzisse a atuação da HBR e, ao mesmo tempo, tivesse uma função comercial clara: receber, apresentar, conectar e gerar oportunidades.',
     highlight: 'Espaço funcional para reuniões executivas e apresentação dinâmica de empreendimentos comerciais.',
     signature: 'BFrees | Criamos espaços que aproximam marcas, pessoas e negócios.',
     bg: '#1e2430',
@@ -127,7 +127,7 @@ const CASES_DATA: CaseItem[] = [
     client: 'Giovanna Baby',
     clientLogo: '/logos/giovanna-baby.svg',
     tagline: 'Ativação Sensorial & Exposição Comercial',
-    desc: 'No Farmácias & Negócios, criamos para a Giovanna Baby um espaço pensado para aproximar a marca do público da feira e valorizar seu portfólio em um ambiente voltado a relacionamento e oportunidades comerciais. Trabalhamos a presença da marca para que o estande funcionasse como um ponto de exposição, conversa e conexão, equilibrando identidade visual, apresentação dos produtos e áreas destinadas ao contato com visitantes e parceiros.',
+    desc: 'No Farmácias & Negócios, criamos para a Giovanna Baby um espaço pensado para aproximar a marca do público da feira e valorizar seu portfólio em um ambiente voltado a relacionamento e oportunidades comerciais. O projeto faz parte do portfólio de estandes da BFrees.\n\nTrabalhamos a presença da marca para que o estande funcionasse como um ponto de exposição, conversa e conexão, equilibrando identidade visual, apresentação dos produtos e áreas destinadas ao contato com visitantes e parceiros.\n\nMais do que estar presente na feira, buscamos criar um espaço capaz de fortalecer a marca, estimular o relacionamento e transformar circulação em oportunidade de negócio.',
     highlight: 'Equilíbrio harmônico entre universo sensorial lúdico e ambiente propício para negociações comerciais.',
     signature: 'BFrees | Criamos espaços para marcas serem vistas, vividas e lembradas.',
     bg: '#33202a',
@@ -142,9 +142,9 @@ const CASES_DATA: CaseItem[] = [
     category: 'Eventos Corporativos',
     client: 'Febrafar',
     tagline: 'Jantar de Gala & Experiência de Relacionamento',
-    desc: 'Estivemos presentes no Jantar Febrafar 2026, um encontro voltado a relacionamento, fortalecimento de parcerias e geração de novas oportunidades para o setor. Para enriquecer a jornada dos convidados, criamos diferentes pontos de experiência ao longo do evento. Desenvolvemos um túnel com backlight, um painel de LED com um globo de LED central como elemento de destaque e um painel de fotos, compondo ambientes pensados para gerar impacto visual, interação e conexão entre pessoas e marcas. Cuidamos da produção e da execução integrada à dinâmica da noite.',
+    desc: 'Estivemos presentes no Jantar Febrafar 2026, um encontro voltado a relacionamento, fortalecimento de parcerias e geração de novas oportunidades para o setor.\n\nPara enriquecer a jornada dos convidados, criamos diferentes pontos de experiência ao longo do evento. Desenvolvemos um túnel com backlight, um painel de LED com um globo de LED central como elemento de destaque e um painel de fotos, compondo ambientes pensados para gerar impacto visual, interação e conexão entre pessoas e marcas.\n\nAlém da criação dos espaços, cuidamos da produção e da execução para que cada elemento funcionasse de forma integrada à dinâmica da noite, contribuindo para uma experiência fluida e marcante.\n\nMais do que estar presente em um evento corporativo, buscamos criar pontos de contato que fortaleçam relacionamentos, valorizem a marca e transformem encontros em experiências memoráveis.',
     highlight: 'Túnel cenográfico com backlight, globo de LED centralizado e painel interativo de fotos para os convidados.',
-    signature: 'BFrees | Criamos experiências que geram conexão real.',
+    signature: 'BFrees | Criamos experiências que geram.',
     bg: '#251b35',
     image: '/cases/case_p11_1.jpg',
     gallery: ['/cases/case_p11_1.jpg', '/cases/case_p10_1.jpg'],
@@ -156,7 +156,7 @@ const CASES_DATA: CaseItem[] = [
     client: 'Nomad',
     clientLogo: '/logos/nomad.svg',
     tagline: 'All Hands Global & Alinhamento Estratégico',
-    desc: 'Para a Nomad, desenvolvemos um evento corporativo pensado para fortalecer relacionamento, criar proximidade com os convidados e transformar o encontro em uma experiência alinhada ao universo da marca. Trabalhamos o evento como uma jornada completa, olhando para a forma como o público seria recebido, como os diferentes momentos aconteceriam e como ambiente, conteúdo, hospitalidade e operação poderiam trabalhar juntos para criar uma experiência fluida e bem executada.',
+    desc: 'Para a Nomad, desenvolvemos um evento corporativo pensado para fortalecer relacionamento, criar proximidade com os convidados e transformar o encontro em uma experiência alinhada ao universo da marca. O projeto aparece no portfólio da BFrees dentro da frente de eventos internos/corporativos.\n\nTrabalhamos o evento como uma jornada completa, olhando para a forma como o público seria recebido, como os diferentes momentos aconteceriam e como ambiente, conteúdo, hospitalidade e operação poderiam trabalhar juntos para criar uma experiência fluida e bem executada.\n\nMais do que produzir um encontro, buscamos criar um contexto capaz de gerar conexão, relacionamento e memória de marca, cuidando da experiência do convidado do início ao fim.',
     highlight: 'Jornada corporativa 360° com atmosfera contemporânea, cuidando da experiência do convidado do início ao fim.',
     signature: 'BFrees | Criamos encontros que aproximam marcas e pessoas.',
     bg: '#161e2b',
@@ -172,7 +172,7 @@ const CASES_DATA: CaseItem[] = [
     client: 'Sherwin-Williams',
     clientLogo: '/logos/sherwin-williams.svg',
     tagline: 'Truck Lounge VIP & Ativação de Paddock',
-    desc: 'A BFrees esteve à frente da criação e execução de uma jornada completa para a Sherwin-Williams na Stock Car, com destaque para o exclusivo Truck Lounge, pensado como um hub de relacionamento premium dentro do autódromo. Do receptivo ao pós-corrida, cada etapa foi planejada de forma integrada, conectando logística, ambientação, hospitalidade, kits personalizados e experiências exclusivas para aproximar a marca de seus convidados. O público teve acesso a uma vista privilegiada da pista, bar de drinks, ativações interativas, simuladores e experiências especiais como visita aos boxes, acesso ao grid e meet & greet com grandes pilotos.',
+    desc: 'A BFrees esteve à frente da criação e execução de uma jornada completa para a Sherwin-Williams na Stock Car, com destaque para o exclusivo Truck Lounge, pensado como um hub de relacionamento premium dentro do autódromo.\n\nDo receptivo ao pós-corrida, cada etapa foi planejada de forma integrada, conectando logística, ambientação, hospitalidade, kits personalizados e experiências exclusivas para aproximar a marca de seus convidados.\n\nNo Truck Lounge, o público teve acesso a uma vista privilegiada da pista, bar de drinks, ativações interativas, simuladores e experiências especiais como visita aos boxes, acesso ao grid e meet & greet com grandes nomes do automobilismo.\n\nMais do que um evento, criamos uma plataforma viva de relacionamento entre marca e público, pensada para gerar conexão, valor e memória de marca.',
     highlight: 'Truck Lounge VIP dentro do autódromo com vista privilegiada, bar de drinks, simuladores e acesso ao grid.',
     signature: 'BFrees | Criando experiências que aproximam marcas e pessoas.',
     bg: '#2b1b18',
@@ -186,7 +186,7 @@ const CASES_DATA: CaseItem[] = [
     client: 'Midea Carrier',
     clientLogo: '/logos/midea-carrier.svg',
     tagline: 'Conscientização ESG & Ativação de Colaboradores',
-    desc: 'Para a Midea Carrier, transformamos uma mensagem importante sobre o descarte correto de eletroeletrônicos em uma experiência leve, interativa e próxima dos colaboradores. Fomos responsáveis pela concepção, produção e operacionalização da ação, criando um ambiente que combinou conscientização ambiental, exposição de produtos, ativações promocionais e diferentes pontos de engajamento com o público. Ao longo da campanha, diversos eletroeletrônicos e eletrodomésticos foram destinados corretamente para reciclagem e descarte responsável.',
+    desc: 'Para a Midea Carrier, transformamos uma mensagem importante sobre o descarte correto de eletroeletrônicos em uma experiência leve, interativa e próxima dos colaboradores.\n\nFomos responsáveis pela concepção, produção e operacionalização da ação, criando um ambiente que combinou conscientização ambiental, exposição de produtos, ativações promocionais e diferentes pontos de engajamento com o público.\n\nAo longo da campanha, diversos eletroeletrônicos e eletrodomésticos foram destinados corretamente para reciclagem e descarte responsável, transformando conscientização em atitude e reforçando, na prática, o compromisso da marca com a sustentabilidade.\n\nMais do que comunicar uma causa, criamos uma experiência capaz de informar, mobilizar e gerar impacto positivo.',
     highlight: 'Ação ESG interna com mecânicas interativas que engajou colaboradores e destinou toneladas de resíduos para reciclagem.',
     signature: 'BFrees | Experiências que conectam propósito, marca e pessoas.',
     bg: '#1b2923',
@@ -202,7 +202,7 @@ const CASES_DATA: CaseItem[] = [
     client: 'Sherwin-Williams',
     clientLogo: '/logos/sherwin-williams.svg',
     tagline: 'Jornada Sensorial & Revelação da Cor do Ano: Aipo',
-    desc: 'Para o lançamento do ColorMix 2027 + Cor do Ano da Sherwin-Williams, criamos uma jornada de experiências pensada para transformar o universo de cores da marca em algo vivo, sensorial e participativo. O evento reuniu mais de 140 convidados e percorreu diferentes momentos e ambientes ao longo da experiência. A narrativa passou pelos espaços Renascer, Reviver, Reacender e Reconectar, com ativações que convidavam o público a interagir com o conceito. Fizeram parte da jornada conteúdos, momentos de hospitalidade, experiências de cuidado, a participação do Chef Claude Troisgros e a revelação da Cor do Ano 2027: Aipo.',
+    desc: 'Para o lançamento do ColorMix 2027 + Cor do Ano da Sherwin-Williams, criamos uma jornada de experiências pensada para transformar o universo de cores da marca em algo vivo, sensorial e participativo. O evento reuniu mais de 140 convidados e percorreu diferentes momentos e ambientes ao longo da experiência.\n\nA narrativa passou pelos espaços Renascer, Reviver, Reacender e Reconectar, com ativações que convidavam o público a interagir com o conceito. Em Reviver, por exemplo, os convidados puderam escrever e enviar postais como lembrança da experiência; ao final, 42 cartões foram enviados. Também fizeram parte da jornada conteúdos, momentos de hospitalidade, experiências de cuidado, a participação do Chef Claude Troisgros e a revelação da Cor do Ano 2027: Aipo, que ganhou protagonismo no encerramento. Os convidados ainda receberam uma seleção de brindes personalizados, como lata de tinta, caderno, revista e sacola.\n\nDa concepção à operação, nosso papel foi conectar cenografia, ambientação, ativações, conteúdo, audiovisual, hospitalidade e produção geral em uma única experiência de marca.',
     highlight: 'Quatro salas conceituais imersivas, envio interativo de postais, menu exclusivo por Claude Troisgros e reveal da cor Aipo.',
     signature: 'BFrees | Transformamos conceitos em experiências que as pessoas vivem, registram e levam com elas.',
     bg: '#33231a',
@@ -218,7 +218,7 @@ const CASES_DATA: CaseItem[] = [
     client: 'DFM',
     clientLogo: '/logos/dfm.svg',
     tagline: 'Lançamento Nacional, Paddock VIP & Mega Test Drive',
-    desc: 'No Festival Interlagos, estivemos à frente de uma operação de grande porte para a DFM (Dongfeng Motor), criando uma experiência completa de lançamento e relacionamento para apresentar a marca ao mercado brasileiro. O projeto ocupou diferentes frentes do evento: um espaço de aproximadamente 600 m² no paddock, preparado para lançamento oficial, imprensa, convidados e coquetel; um estande de 225 m² na Arena, pensado para exposição, relacionamento e direcionamento do público; e uma área exclusiva de cerca de 1.780 m² para test drive, com percurso off-road e experiências com os veículos da marca. Mobilizamos mais de 70 profissionais para uma operação impecável.',
+    desc: 'No Festival Interlagos, estivemos à frente de uma operação de grande porte para a DFM (Dongfeng Motor), criando uma experiência completa de lançamento e relacionamento para apresentar a marca ao mercado brasileiro.\n\nO projeto ocupou diferentes frentes do evento: um espaço de aproximadamente 600 m² no paddock, preparado para lançamento oficial, imprensa, convidados e coquetel; um estande de 225 m² na Arena, pensado para exposição, relacionamento e direcionamento do público; e uma área exclusiva de cerca de 1.780 m² para test drive, com percurso off-road e experiências com os veículos da marca.\n\nCuidamos da produção geral, cenografia, montagem, hospitalidade, credenciamento, gestão de fornecedores e operação dos espaços, mobilizando uma equipe com mais de 70 profissionais para fazer toda a jornada acontecer de forma integrada.\n\nMais do que marcar presença no festival, criamos uma plataforma de lançamento, experimentação e relacionamento, permitindo que diferentes públicos conhecessem a DFM não apenas pelo produto, mas pela experiência construída ao redor da marca.',
     highlight: 'Operação integrada de mais de 2.600 m² dividida entre paddock VIP de 600 m², estande de 225 m² e circuito test drive de 1.780 m².',
     signature: 'BFrees | Grandes projetos, múltiplas frentes e uma experiência conectada de ponta a ponta.',
     bg: '#141824',
@@ -236,7 +236,7 @@ const CASES_DATA: CaseItem[] = [
     client: 'PepsiCo',
     clientLogo: '/logos/pepsico.svg',
     tagline: 'Convenção Estratégica & Ativação Loja Perfeita',
-    desc: 'Na Convenção Giga X da PepsiCo, contribuímos para a realização de um encontro estratégico voltado a vendas, marketing e performance no ponto de venda, reunindo profissionais de diferentes áreas da empresa em torno de um mesmo objetivo: fortalecer a execução comercial e impulsionar resultados. Um dos principais pilares do evento foi o conceito de "Loja Perfeita", que trabalha técnicas e soluções para otimizar a experiência de compra e aumentar a eficiência das vendas desde a disposição estratégica dos produtos nas prateleiras até displays e padrões de execução.',
+    desc: 'Na Convenção Giga X da PepsiCo, contribuímos para a realização de um encontro estratégico voltado a vendas, marketing e performance no ponto de venda, reunindo profissionais de diferentes áreas da empresa em torno de um mesmo objetivo: fortalecer a execução comercial e impulsionar resultados.\n\nUm dos principais pilares do evento foi o conceito de “Loja Perfeita”, que trabalha técnicas e soluções para otimizar a experiência de compra e aumentar a eficiência das vendas desde a disposição estratégica dos produtos nas prateleiras até displays, campanhas promocionais e padrões de execução nos diferentes canais.\n\nA convenção também teve um papel importante de treinamento, alinhamento e troca, compartilhando ferramentas e boas práticas para unificar o padrão de excelência da PepsiCo e preparar os times para uma atuação cada vez mais estratégica no mercado.\n\nNosso trabalho foi contribuir para transformar todo esse conteúdo em uma experiência de alto impacto, conectando produção, ambientação, comunicação e operação para que estratégia e engajamento acontecessem no mesmo espaço.',
     highlight: 'Imersão prática no conceito Loja Perfeita e alinhamento de alta performance para a força de vendas nacional da PepsiCo.',
     signature: 'BFrees | Criamos convenções que conectam pessoas, estratégia e resultado.',
     bg: '#19253b',
@@ -251,7 +251,7 @@ const CASES_DATA: CaseItem[] = [
     category: 'Convenções',
     client: 'Convenção DNA',
     tagline: 'Mega Encontro de Liderança, Cultura & Pertencimento',
-    desc: 'Na Convenção DNA 2026, criamos uma experiência pensada para ir além do conteúdo e transformar o encontro em um momento de conexão, cultura e pertencimento para mais de 1.800 participantes. Da plenária aos espaços de convivência, desenvolvemos uma jornada integrada, conectando cenografia, ativações, tecnologia e produção para reforçar a identidade da marca e manter o público envolvido ao longo de toda a experiência. Cada ambiente foi pensado para contribuir com a narrativa do evento.',
+    desc: 'Na Convenção DNA 2026, criamos uma experiência pensada para ir além do conteúdo e transformar o encontro em um momento de conexão, cultura e pertencimento para mais de 1.800 participantes.\n\nDa plenária aos espaços de convivência, desenvolvemos uma jornada integrada, conectando cenografia, ativações, tecnologia e produção para reforçar a identidade da marca e manter o público envolvido ao longo de toda a experiência.\n\nCada ambiente foi pensado para contribuir com a narrativa do evento, criando diferentes pontos de contato entre conteúdo, pessoas e marca.\n\nMais do que produzir uma convenção, buscamos criar uma experiência capaz de engajar, aproximar e transformar cada detalhe em parte da jornada.',
     highlight: 'Cenografia monumental, tecnologia de ponta e engajamento integrado para mais de 1.800 participantes simultâneos.',
     signature: 'BFrees | Convenções que conectam pessoas, cultura e propósito.',
     bg: '#2d1b22',
@@ -267,7 +267,7 @@ const CASES_DATA: CaseItem[] = [
     client: 'Suvinil',
     clientLogo: '/logos/suvinil.svg',
     tagline: 'Instalação Imersiva de 30 Dias & Boteco Co(r)existir',
-    desc: 'Na Bienal de Arquitetura Brasileira, transformamos ideias em experiências reais ao lado da Suvinil e parceiros, em uma jornada imersiva que permaneceu ativa por 30 dias, conectando arquitetura, cor e vivência. Ao longo do projeto, diferentes espaços convidavam o público a experimentar a cor de novas formas. Entre os destaques estavam as experiências Criar, Brincar, Sentir e Respirar, um espaço instagramável e o Boteco Co(r)existir. A BFrees atuou como parceira estratégica em toda a jornada, da viabilização à execução.',
+    desc: 'Na Bienal de Arquitetura Brasileira, transformamos ideias em experiências reais ao lado da Suvinil e parceiros, em uma jornada imersiva que permaneceu ativa por 30 dias, conectando arquitetura, cor e vivência.\n\nAo longo do projeto, diferentes espaços convidavam o público a experimentar a cor de novas formas. Entre os destaques estavam as experiências Criar, Brincar, Sentir e Respirar, um espaço instagramável e o Boteco Co(r)existir.\n\nDos pavilhões ao boteco, a cor conduziu a narrativa, criando atmosferas, contando histórias e aproximando as pessoas do universo da marca.\n\nA BFrees atuou como parceira estratégica em toda a jornada, da viabilização à execução, conectando equipes, transformando ideias em soluções e garantindo que cada detalhe ganhasse forma ao longo da experiência.',
     highlight: 'Espaço conceitual com 30 dias contínuos de ativação, pavilhões sensoriais e o Boteco Co(r)existir.',
     signature: 'BFrees | Projetos especiais que transformam conceito em experiência.',
     bg: '#2e261f',
@@ -617,7 +617,11 @@ export const Projects: FC<{ onOpenBudget?: () => void }> = ({ onOpenBudget }) =>
                 </h3>
 
                 <div className="space-y-4 text-white/80 font-ubuntu text-sm sm:text-base leading-relaxed mb-6">
-                  <p className="text-white/90 font-normal leading-relaxed">{selectedProject.desc}</p>
+                  <div className="space-y-3 text-white/90 font-normal leading-relaxed">
+                    {selectedProject.desc.split('\n\n').map((paragraph, idx) => (
+                      <p key={idx}>{paragraph.trim()}</p>
+                    ))}
+                  </div>
                   
                   <div className="p-4 rounded-xl bg-white/5 border border-white/10">
                     <p className="text-xs uppercase tracking-wider text-[#ea8100] font-bold mb-1">Destaque de Entrega:</p>
