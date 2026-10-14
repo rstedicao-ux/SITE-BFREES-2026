@@ -178,7 +178,7 @@ export const About: FC<{ onOpenBudget: () => void }> = ({ onOpenBudget }) => {
           zIndex: 0,
         }} />
 
-        {/* ── 6. CTA CARD com vídeo 3 de fundo e texto BRANCO ── */}
+        {/* ── 6. CTA CARD com vídeo 3 de fundo e conteúdo centralizado ── */}
         <div style={{
           position: 'absolute', left: 43, top: 1550,
           width: 1834, height: 597,
@@ -203,75 +203,108 @@ export const About: FC<{ onOpenBudget: () => void }> = ({ onOpenBudget }) => {
             <source src="/sobre-nos/video 3.mov" type="video/quicktime" />
             <source src="/sobre-nos/video 3.mov" type="video/mp4" />
           </video>
-          {/* Overlay suave para legibilidade com vivacidade */}
+          {/* Overlay suave para legibilidade e vivacidade */}
           <div style={{
             position: 'absolute',
             inset: 0,
-            background: 'linear-gradient(180deg, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.45) 100%)',
+            background: 'linear-gradient(180deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.65) 100%)',
           }} />
+
+          {/* Conteúdo harmonizado e centralizado */}
+          <div
+            style={{
+              position: 'relative',
+              zIndex: 2,
+              width: '100%',
+              height: '100%',
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
+              padding: '40px 60px',
+              textAlign: 'center',
+            }}
+          >
+            <p
+              style={{
+                fontFamily: "'Ubuntu', sans-serif",
+                fontWeight: 400,
+                fontSize: 22,
+                color: '#FFFFFF',
+                margin: '0 0 16px 0',
+                letterSpacing: '0.04em',
+                textShadow: '0 2px 8px rgba(0,0,0,0.8)',
+              }}
+            >
+              Seu próximo projeto pode começar aqui.
+            </p>
+
+            <h3
+              style={{
+                fontFamily: "'Ubuntu', sans-serif",
+                fontWeight: 700,
+                fontSize: 38,
+                lineHeight: 1.25,
+                color: '#ea8100',
+                margin: '0 0 14px 0',
+                maxWidth: 1100,
+                textShadow: '0 2px 14px rgba(0,0,0,0.9), 0 0 20px rgba(234, 129, 0, 0.25)',
+              }}
+            >
+              Conte para a gente o desafio, o objetivo e onde você quer chegar.
+            </h3>
+
+            <p
+              style={{
+                fontFamily: "'Ubuntu', sans-serif",
+                fontWeight: 500,
+                fontSize: 26,
+                lineHeight: 1.35,
+                color: '#FFFFFF',
+                margin: '0 0 28px 0',
+                maxWidth: 960,
+                textShadow: '0 2px 10px rgba(0,0,0,0.8)',
+              }}
+            >
+              A BFrees transforma isso em uma experiência pensada para acontecer de verdade.
+            </p>
+
+            <button
+              onClick={onOpenBudget}
+              style={{
+                minWidth: 220,
+                height: 50,
+                padding: '0 36px',
+                border: '1.5px solid #FFFFFF',
+                borderRadius: 45,
+                background: 'rgba(255, 255, 255, 0.08)',
+                backdropFilter: 'blur(8px)',
+                cursor: 'pointer',
+                fontFamily: "'Jaapokki subtract', sans-serif",
+                fontWeight: 400,
+                fontSize: 20,
+                color: '#FFFFFF',
+                display: 'inline-flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                transition: 'all 0.3s ease',
+                boxShadow: '0 4px 16px rgba(0,0,0,0.3)',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background = '#ea8100';
+                e.currentTarget.style.borderColor = '#ea8100';
+                e.currentTarget.style.transform = 'scale(1.05)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background = 'rgba(255, 255, 255, 0.08)';
+                e.currentTarget.style.borderColor = '#FFFFFF';
+                e.currentTarget.style.transform = 'scale(1)';
+              }}
+            >
+              Fale com a Bfrees
+            </button>
+          </div>
         </div>
-
-        {/* "Hire Us Now" — texto BRANCO sobre card */}
-        <p style={{
-          position: 'absolute',
-          left: 477, top: 1655,
-          width: 966,
-          fontFamily: "'Ubuntu', sans-serif",
-          fontWeight: 400,
-          fontSize: 34,
-          textAlign: 'center',
-          color: '#FFFFFF',
-          margin: 0,
-          zIndex: 2,
-          letterSpacing: '0.02em',
-          textShadow: '0 2px 8px rgba(0,0,0,0.6)',
-        }}>
-          Seu próximo projeto pode começar aqui.
-        </p>
-
-        {/* "We Are Always Ready To Take A Perfect Shot" — texto BRANCO */}
-        <p style={{
-          position: 'absolute',
-          left: 477, top: 1720,
-          width: 966,
-          fontFamily: "'Ubuntu', sans-serif",
-          fontWeight: 500,
-          fontSize: 62,
-          textAlign: 'center',
-          lineHeight: 1.15,
-          color: '#FFFFFF',
-          margin: 0,
-          zIndex: 2,
-          textShadow: '0 2px 12px rgba(0,0,0,0.7)',
-        }}>
-          Conte para a gente o desafio, o objetivo e onde você quer chegar. <br />A BFrees transforma
-          isso em uma experiência pensada para acontecer de verdade.
-        </p>
-
-        {/* Botão "Get Started" — borda e texto BRANCOS */}
-        <button
-          onClick={onOpenBudget}
-          style={{
-            position: 'absolute',
-            left: 864, top: 1945,
-            width: 192, height: 47,
-            border: '1px solid #FFFFFF',
-            borderRadius: 45,
-            background: 'transparent',
-            cursor: 'pointer',
-            fontFamily: "'Jaapokki subtract', sans-serif",
-            fontWeight: 400,
-            fontSize: 22.95,
-            color: '#FFFFFF',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            zIndex: 2,
-            transition: 'all 0.3s ease',
-          }}
-        >
-          Fale com a Bfrees
-        </button>
 
 
 
