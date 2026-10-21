@@ -150,19 +150,6 @@ const CASES_DATA: CaseItem[] = [
     videoEmbed: 'https://player.vimeo.com/video/1194156299?h=81efcde20b',
   },
   {
-    id: 5,
-    title: 'CHEP | Economia Circular',
-    category: 'Feiras & Estandes',
-    client: 'CHEP',
-    clientLogo: '/logos/chep.svg',
-    tagline: 'Logística Circular & Sustentabilidade na Prática',
-    desc: 'Para a CHEP, criamos uma experiência pensada para transformar um tema técnico — economia circular e logística de pallets — em uma jornada simples, visual e fácil de entender. Ao longo da interação, o visitante acompanhava o percurso de um pallet pela cadeia logística, tomava decisões e conseguia visualizar, na prática, as diferenças entre o modelo linear e o modelo circular, entendendo impactos ligados a transporte, produtividade, redistribuição, custos e reaproveitamento. Conectamos cenografia, narrativa, audiovisual e tecnologia para tornar o conceito claro e memorável.',
-    highlight: 'Gamificação didática sobre logística circular conectando cenografia, narrativa e impacto sustentável.',
-    signature: 'BFrees | Transformando conteúdos complexos em experiências que aproximam marcas e pessoas.',
-    bg: '#253d2f',
-    image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1920&auto=format&fit=crop',
-  },
-  {
     id: 6,
     title: 'HBR | ABF',
     category: 'Feiras & Estandes',
@@ -577,7 +564,7 @@ export const Projects: FC<{ onOpenBudget?: () => void }> = ({ onOpenBudget }) =>
 
               {/* Content Row */}
               <div className="relative z-10 w-full px-6 sm:px-12 md:px-20 max-w-[1920px] mx-auto flex flex-col md:flex-row md:items-center justify-between gap-6 pointer-events-none">
-                <div className="flex flex-col items-start max-w-4xl">
+                <div className="flex flex-col items-start w-full md:flex-1 min-w-0 max-w-4xl">
                   {/* Category & Tagline Badge */}
                   <div className="flex flex-wrap items-center gap-2 sm:gap-3 mb-3">
                     <span
@@ -594,7 +581,7 @@ export const Projects: FC<{ onOpenBudget?: () => void }> = ({ onOpenBudget }) =>
                       </span>
                     )}
                     <span
-                      className="text-xs sm:text-sm font-ubuntu transition-colors duration-300 text-white/70 group-hover:text-white/80"
+                      className="text-xs sm:text-sm font-ubuntu transition-colors duration-300 text-white/70 group-hover:text-white/80 [text-wrap:balance]"
                     >
                       • {proj.tagline}
                     </span>
@@ -602,14 +589,14 @@ export const Projects: FC<{ onOpenBudget?: () => void }> = ({ onOpenBudget }) =>
 
                   {/* Main Case Title */}
                   <h3
-                    className="font-jaapokki uppercase leading-[0.95] tracking-tight sm:tracking-[-2px] lg:tracking-[-3px] transition-colors duration-300 m-0 text-white text-3xl sm:text-5xl md:text-6xl lg:text-[70px]"
+                    className="font-jaapokki uppercase leading-[0.95] tracking-tight sm:tracking-[-1px] lg:tracking-[-2px] transition-colors duration-300 m-0 text-white text-3xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-[64px] break-words [text-wrap:balance]"
                   >
                     {proj.title}
                   </h3>
                 </div>
 
                 {/* Right side: Client info / CTA preview */}
-                <div className="flex items-center gap-4 self-start md:self-center transition-all duration-300 group-hover:translate-x-2">
+                <div className="flex items-center gap-4 shrink-0 self-start md:self-center transition-all duration-300 group-hover:translate-x-2">
                   {proj.clientLogo && (
                     <div className="hidden lg:flex items-center justify-center w-28 h-12 px-3 py-1 bg-white/10 backdrop-blur-sm rounded-xl border border-white/15 group-hover:bg-white/20 transition-all">
                       <img
@@ -621,7 +608,7 @@ export const Projects: FC<{ onOpenBudget?: () => void }> = ({ onOpenBudget }) =>
                   )}
 
                   <div
-                    className="flex items-center gap-2 text-xs sm:text-sm font-ubuntu font-bold tracking-wider uppercase px-4 py-2 rounded-full border transition-all duration-300 border-white/30 text-white group-hover:border-[#ea8100] group-hover:bg-[#ea8100] group-hover:text-white"
+                    className="flex items-center gap-2 whitespace-nowrap text-xs sm:text-sm font-ubuntu font-bold tracking-wider uppercase px-4 py-2 rounded-full border transition-all duration-300 border-white/30 text-white group-hover:border-[#ea8100] group-hover:bg-[#ea8100] group-hover:text-white"
                   >
                     <span>Ver Case</span>
                     <svg
@@ -782,7 +769,7 @@ export const Projects: FC<{ onOpenBudget?: () => void }> = ({ onOpenBudget }) =>
             {/* Technical Sheet & Content (Right Column) */}
             <div className="w-full lg:w-1/2 p-6 sm:p-10 flex flex-col justify-between bg-[#121029]">
               <div>
-                <div className="flex items-center justify-between gap-4 mb-5">
+                <div className="flex flex-wrap items-center justify-between gap-3 mb-5 lg:pr-12">
                   <div className="inline-block px-3.5 py-1 rounded-full text-[#ea8100] border border-[#ea8100]/40 bg-[#ea8100]/10 text-xs font-ubuntu font-bold tracking-widest uppercase">
                     FICHA TÉCNICA DO CASE
                   </div>
@@ -798,7 +785,7 @@ export const Projects: FC<{ onOpenBudget?: () => void }> = ({ onOpenBudget }) =>
                   )}
                 </div>
 
-                <h2 className="text-2xl sm:text-4xl font-jaapokki text-white mb-2 leading-tight uppercase">
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-jaapokki text-white mb-2 leading-tight uppercase break-words [text-wrap:balance]">
                   {selectedProject.title}
                 </h2>
                 
@@ -807,7 +794,7 @@ export const Projects: FC<{ onOpenBudget?: () => void }> = ({ onOpenBudget }) =>
                 </h3>
 
                 <div className="space-y-4 text-white/80 font-ubuntu text-sm sm:text-base leading-relaxed mb-6">
-                  <div className="space-y-3 text-white/90 font-normal leading-relaxed">
+                  <div className="space-y-3 text-white/90 font-normal leading-relaxed text-left [text-wrap:pretty] break-words">
                     {selectedProject.desc.split('\n\n').map((paragraph, idx) => (
                       <p key={idx}>{paragraph.trim()}</p>
                     ))}
@@ -815,12 +802,12 @@ export const Projects: FC<{ onOpenBudget?: () => void }> = ({ onOpenBudget }) =>
                   
                   <div className="p-4 rounded-xl bg-white/5 border border-white/10">
                     <p className="text-xs uppercase tracking-wider text-[#ea8100] font-bold mb-1">Destaque de Entrega:</p>
-                    <p className="text-white/85 text-sm">{selectedProject.highlight}</p>
+                    <p className="text-white/85 text-sm [text-wrap:pretty]">{selectedProject.highlight}</p>
                   </div>
 
                   {/* Assinatura oficial do Case conforme PDF */}
                   <div className="p-3.5 rounded-xl bg-[#ea8100]/10 border border-[#ea8100]/30">
-                    <p className="text-xs sm:text-sm text-[#ea8100] font-ubuntu font-medium italic m-0">
+                    <p className="text-xs sm:text-sm text-[#ea8100] font-ubuntu font-medium italic m-0 [text-wrap:balance]">
                       "{selectedProject.signature}"
                     </p>
                   </div>

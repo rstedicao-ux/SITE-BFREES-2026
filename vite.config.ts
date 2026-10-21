@@ -34,8 +34,7 @@ export default defineConfig(({ mode }) => {
       port: parseInt(process.env.PORT || '8443'),
       strictPort: true,
       watch: {
-        usePolling: true,
-        interval: 1000,
+        usePolling: false,
         ignored: ['**/.figma/**', '**/node_modules/**'],
       },
     },

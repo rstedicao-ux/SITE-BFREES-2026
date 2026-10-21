@@ -100,53 +100,57 @@ export const About: FC<{ onOpenBudget: () => void }> = ({ onOpenBudget }) => {
 
         {/* ── 3. COLUNA DIREITA ── */}
 
-        {/* "About Us" label */}
-        <p style={{
+        <div style={{
           position: 'absolute', left: 1171, top: 705,
-          width: 183,
-          fontFamily: "'Ubuntu', sans-serif", fontWeight: 400, fontSize: 40,
-          color: '#000000', margin: 0,
-        }}>Sobre a Bfrees</p>
-
-        {/* "We Always Make The Best" */}
-        <p style={{
-          position: 'absolute', left: 1171, top: 780,
-          width: 598,
-          fontFamily: "'Ubuntu', sans-serif", fontWeight: 500, fontSize: 64,
-          lineHeight: 1.1, color: '#000000', margin: 0,
-        }}>
-          Transformamos estratégia em experiência.
-        </p>
-
-        {/* Body text */}
-        <p style={{
-          position: 'absolute', left: 1171, top: 963,
           width: 669,
-          fontFamily: "'Ubuntu', sans-serif", fontWeight: 400, fontSize: 22,
-          lineHeight: 1.5, color: '#000000', margin: 0,
+          display: 'flex', flexDirection: 'column', alignItems: 'flex-start',
         }}>
-          A BFrees é uma produtora de eventos e brand experience que cria experiências
-          presenciais para aproximar marcas e pessoas. Atuamos em feiras e estandes, eventos
-          corporativos, convenções, lançamentos, exposições e projetos especiais, sempre
-          buscando traduzir a essência e os objetivos de cada marca em experiências relevantes
-          para o público.
-        </p>
+          {/* "About Us" label */}
+          <p style={{
+            fontFamily: "'Ubuntu', sans-serif", fontWeight: 400, fontSize: 40,
+            color: '#000000', margin: 0, whiteSpace: 'nowrap',
+          }}>Sobre a Bfrees</p>
 
-        {/* Botão "Contate-nos" */}
-        <button
-          onClick={onOpenBudget}
-          style={{
-            position: 'absolute', left: 1171, top: 1150,
-            width: 192, height: 47,
-            border: '1px solid #000000', borderRadius: 45,
-            background: 'transparent', cursor: 'pointer',
-            fontFamily: "'Jaapokki subtract', sans-serif", fontWeight: 400, fontSize: 22.95,
-            color: '#000000',
-            display: 'flex', alignItems: 'center', justifyContent: 'center',
-          }}
-        >
-          Contate-nos
-        </button>
+          {/* Título */}
+          <p style={{
+            maxWidth: 669, marginTop: 28,
+            fontFamily: "'Ubuntu', sans-serif", fontWeight: 500, fontSize: 64,
+            lineHeight: 1.1, color: '#000000', marginBottom: 0, marginLeft: 0, marginRight: 0,
+            textWrap: 'balance',
+          }}>
+            Transformamos estratégia em experiência.
+          </p>
+
+          {/* Body text */}
+          <p style={{
+            width: 669, marginTop: 36,
+            fontFamily: "'Ubuntu', sans-serif", fontWeight: 400, fontSize: 22,
+            lineHeight: 1.5, color: '#000000', marginBottom: 0, marginLeft: 0, marginRight: 0,
+          }}>
+            A BFrees é uma produtora de eventos e brand experience que cria experiências
+            presenciais para aproximar marcas e pessoas. Atuamos em feiras e estandes, eventos
+            corporativos, convenções, lançamentos, exposições e projetos especiais, sempre
+            buscando traduzir a essência e os objetivos de cada marca em experiências relevantes
+            para o público.
+          </p>
+
+          {/* Botão "Contate-nos" */}
+          <button
+            onClick={onOpenBudget}
+            style={{
+              marginTop: 36,
+              width: 192, height: 47,
+              border: '1px solid #000000', borderRadius: 45,
+              background: 'transparent', cursor: 'pointer',
+              fontFamily: "'Jaapokki subtract', sans-serif", fontWeight: 400, fontSize: 22.95,
+              color: '#000000',
+              display: 'flex', alignItems: 'center', justifyContent: 'center',
+            }}
+          >
+            Contate-nos
+          </button>
+        </div>
+
 
         {/* ── 4. OUR SKILLS (Texto de introdução) ── */}
         <p style={{
@@ -229,11 +233,10 @@ export const About: FC<{ onOpenBudget: () => void }> = ({ onOpenBudget }) => {
               style={{
                 fontFamily: "'Ubuntu', sans-serif",
                 fontWeight: 400,
-                fontSize: 22,
+                fontSize: 40,
                 color: '#FFFFFF',
-                margin: '0 0 16px 0',
-                letterSpacing: '0.04em',
-                textShadow: '0 2px 8px rgba(0,0,0,0.8)',
+                margin: '0 0 10px 0',
+                letterSpacing: '-0.01em',
               }}
             >
               Seu próximo projeto pode começar aqui.
@@ -242,28 +245,28 @@ export const About: FC<{ onOpenBudget: () => void }> = ({ onOpenBudget }) => {
             <h3
               style={{
                 fontFamily: "'Ubuntu', sans-serif",
-                fontWeight: 700,
-                fontSize: 38,
-                lineHeight: 1.25,
-                color: '#ea8100',
+                fontWeight: 500,
+                fontSize: 73.6,
+                lineHeight: 1.08,
+                letterSpacing: '-0.02em',
+                color: '#FF8D00',
                 margin: '0 0 14px 0',
-                maxWidth: 1100,
-                textShadow: '0 2px 14px rgba(0,0,0,0.9), 0 0 20px rgba(234, 129, 0, 0.25)',
+                maxWidth: 1350,
               }}
             >
-              Conte para a gente o desafio, o objetivo e onde você quer chegar.
+              Conte para a gente o desafio, o<br />
+              objetivo e onde você quer chegar.
             </h3>
 
             <p
               style={{
                 fontFamily: "'Ubuntu', sans-serif",
-                fontWeight: 500,
-                fontSize: 26,
-                lineHeight: 1.35,
+                fontWeight: 400,
+                fontSize: 30,
+                lineHeight: 1.25,
                 color: '#FFFFFF',
-                margin: '0 0 28px 0',
-                maxWidth: 960,
-                textShadow: '0 2px 10px rgba(0,0,0,0.8)',
+                margin: '0 0 32px 0',
+                maxWidth: 1200,
               }}
             >
               A BFrees transforma isso em uma experiência pensada para acontecer de verdade.
@@ -272,17 +275,17 @@ export const About: FC<{ onOpenBudget: () => void }> = ({ onOpenBudget }) => {
             <button
               onClick={onOpenBudget}
               style={{
-                minWidth: 220,
-                height: 50,
-                padding: '0 36px',
-                border: '1.5px solid #FFFFFF',
+                width: 243,
+                height: 47,
+                padding: '0 20px',
+                border: '1px solid #FFFFFF',
                 borderRadius: 45,
                 background: 'rgba(255, 255, 255, 0.08)',
                 backdropFilter: 'blur(8px)',
                 cursor: 'pointer',
                 fontFamily: "'Jaapokki subtract', sans-serif",
                 fontWeight: 400,
-                fontSize: 20,
+                fontSize: 23,
                 color: '#FFFFFF',
                 display: 'inline-flex',
                 alignItems: 'center',
@@ -291,8 +294,8 @@ export const About: FC<{ onOpenBudget: () => void }> = ({ onOpenBudget }) => {
                 boxShadow: '0 4px 16px rgba(0,0,0,0.3)',
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.background = '#ea8100';
-                e.currentTarget.style.borderColor = '#ea8100';
+                e.currentTarget.style.background = '#FF8D00';
+                e.currentTarget.style.borderColor = '#FF8D00';
                 e.currentTarget.style.transform = 'scale(1.05)';
               }}
               onMouseLeave={(e) => {

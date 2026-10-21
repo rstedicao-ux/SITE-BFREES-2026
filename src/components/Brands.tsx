@@ -1,6 +1,6 @@
 import { FC, useRef, useEffect, useCallback, useState } from 'react';
 import svgPaths from '@/imports/SecaoMarcas-1/svg-2j9j7ags04';
-import womanImg from '@/imports/SecaoMarcas-1/cc523b1780c4ce37f8f681ce819c9edd3f0f2357.png';
+import womanImg from '@/assets/Profissional em evento com polo preta.png';
 
 // ─── Brand cards data ────────────────────────────────────────────────────────
 const BRANDS: { name: string; logo: string; fallback?: string; black?: boolean }[] = [
@@ -427,7 +427,7 @@ export const Brands: FC<{ onOpenBudget: () => void }> = ({ onOpenBudget }) => {
         </div>
 
         {/* ── Woman with hand image (z-10, behind cards z-20) ── */}
-        <div className="absolute pointer-events-none" style={{ left: 720, top: 67, width: 1018, height: 1526, zIndex: 10 }}>
+        <div className="absolute pointer-events-none" style={{ left: 965, top: 67, width: 740, height: 1106, zIndex: 10 }}>
           <img
             alt="Mulher com mão estendida"
             className="absolute inset-0 max-w-none size-full"
@@ -517,11 +517,11 @@ export const Brands: FC<{ onOpenBudget: () => void }> = ({ onOpenBudget }) => {
 
         {/* ── Bottom stats columns ── */}
         {[
-          { left: 254, titleW: 190, bodyW: 195, title: 'Criatividade\ncom propósito', body: 'Ideias que saem do papel e ganham forma em experiências reais.' },
-          { left: 653, titleW: 230, bodyW: 235, title: 'Parcerias que\nconstroem', body: 'Trabalhamos lado a lado com clientes, fornecedores e parceiros em cada etapa.' },
-          { left: 1103, titleW: 230, bodyW: 235, title: 'Execução que\nfaz acontecer', body: 'Estratégia, produção e operação conectadas do início ao fim.' },
-          { left: 1553, titleW: 260, bodyW: 260, title: 'Experiências\nque ficam', body: 'Criamos momentos que aproximam pessoas e fortalecem marcas.' },
-        ].map(({ left, titleW, bodyW, title, body }, i) => (
+          { left: 254, title: 'Criatividade\ncom propósito', body: 'Ideias que eles têm\ne geram impacto real.' },
+          { left: 653, title: 'Parcerias que\ntransformam', body: 'Trabalhamos lado a lado com grandes marcas.' },
+          { left: 1103, title: 'incomum que\nfalam por si', body: 'Estratégia, execução e resultados mensuráveis.' },
+          { left: 1553, title: 'Experiências que ficam na memória', body: 'Criamos momentos que marcam e inspiram.' },
+        ].map(({ left, title, body }, i) => (
           <div key={i}>
             <p className="absolute"
               style={{
@@ -532,7 +532,7 @@ export const Brands: FC<{ onOpenBudget: () => void }> = ({ onOpenBudget }) => {
                 color: 'white',
                 left,
                 top: 1155,
-                width: titleW,
+                width: i === 3 ? 244 : i === 2 ? 193 : 167,
                 whiteSpace: 'pre-wrap',
                 zIndex: 30,
               }}>
@@ -547,7 +547,7 @@ export const Brands: FC<{ onOpenBudget: () => void }> = ({ onOpenBudget }) => {
                 color: 'white',
                 left,
                 top: 1219,
-                width: bodyW,
+                width: i === 0 ? 182 : 193,
                 whiteSpace: 'pre-wrap',
                 zIndex: 30,
               }}>
