@@ -15,8 +15,8 @@ export const Contact: FC = () => {
   };
 
   return (
-    <section 
-      id="contato" 
+    <section
+      id="contato"
       onMouseMove={handleMouseMove}
       className="relative w-full min-h-screen bg-brand-black overflow-hidden py-24 md:py-32 flex items-center justify-center select-none"
     >
@@ -37,14 +37,14 @@ export const Contact: FC = () => {
       <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-black/70 via-transparent to-black/70" />
 
       {/* Interactive Background with parallax texture grid and mouse movement light glow */}
-      <div 
+      <div
         className="absolute inset-0 pointer-events-none transition-transform duration-200 ease-out"
         style={{
           transform: `translate3d(${mousePos.x * 35}px, ${mousePos.y * 35}px, 0) scale(1.05)`,
         }}
       >
         {/* Particle/Grid Texture Overlay */}
-        <div 
+        <div
           className="absolute inset-0 opacity-15"
           style={{
             backgroundImage: `radial-gradient(rgba(255, 255, 255, 0.25) 1px, transparent 0)`,
@@ -53,7 +53,7 @@ export const Contact: FC = () => {
         />
 
         {/* Dynamic Glow following mouse position */}
-        <div 
+        <div
           className="absolute w-[600px] h-[600px] rounded-full bg-brand-orange/20 blur-[120px] transition-all duration-300 pointer-events-none"
           style={{
             left: `calc(50% + ${mousePos.x * 600}px - 300px)`,
@@ -68,9 +68,9 @@ export const Contact: FC = () => {
 
       <div className="container mx-auto px-6 lg:px-12 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-          
+
           {/* Left Side: Animated "Get in touch." Heading */}
-          <div 
+          <div
             className="lg:col-span-6 transition-transform duration-300 ease-out"
             style={{
               transform: `translate3d(${mousePos.x * -15}px, ${mousePos.y * -15}px, 0)`,
@@ -88,14 +88,14 @@ export const Contact: FC = () => {
           </div>
 
           {/* Right Side: Contact Cards Panel based on SecaoContato Figma design */}
-          <div 
+          <div
             className="lg:col-span-6 glass border border-white/10 rounded-[40px] md:rounded-[60px] p-8 sm:p-12 md:p-16 backdrop-blur-2xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] transition-transform duration-300 ease-out"
             style={{
               transform: `translate3d(${mousePos.x * 15}px, ${mousePos.y * 15}px, 0)`,
             }}
           >
             <div className="space-y-10">
-              
+
               {/* Localização */}
               <div className="flex items-start gap-6 group">
                 <div className="w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center p-3 shrink-0 group-hover:border-brand-orange/50 transition-colors">
@@ -118,57 +118,58 @@ export const Contact: FC = () => {
                 <div>
                   <h3 className="font-sans font-medium text-2xl md:text-3xl text-white mb-2">Telefone</h3>
                   <a href="https://wa.me/5511999999999" target="_blank" rel="noreferrer" className="font-sans text-white/70 text-lg md:text-xl hover:text-brand-orange transition-colors">
-                    +55 11 99999-9999
-                  </a>
-                </div>
+                    +55 11 3459-3030</p>
+                  <p>+55 11 3459-3030</p>
+                </a>
               </div>
-
-              {/* E-mail */}
-              <div className="flex items-start gap-6 group">
-                <div className="w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center p-3 shrink-0 group-hover:border-brand-orange/50 transition-colors">
-                  <img src={imgCircledEnvelope} alt="E-mail" className="w-full h-full object-contain filter invert opacity-90 group-hover:opacity-100 transition-opacity" />
-                </div>
-                <div>
-                  <h3 className="font-sans font-medium text-2xl md:text-3xl text-white mb-2">E-mail</h3>
-                  <a href="mailto:contato@bfrees.com.br" className="font-sans text-white/70 text-lg md:text-xl hover:text-brand-orange transition-colors">
-                    contato@bfrees.com.br
-                  </a>
-                </div>
-              </div>
-
-              {/* Siga a BFrees */}
-              <div className="flex items-start gap-6 group">
-                <div className="w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center p-3 shrink-0 group-hover:border-brand-orange/50 transition-colors">
-                  <img src={imgGoodQuality} alt="Siga a BFrees" className="w-full h-full object-contain filter invert opacity-90 group-hover:opacity-100 transition-opacity" />
-                </div>
-                <div>
-                  <h3 className="font-sans font-medium text-2xl md:text-3xl text-white mb-3">Siga a BFrees</h3>
-                  <div className="flex items-center gap-4">
-                    <a 
-                      href="https://linkedin.com/company/bfrees" 
-                      target="_blank" 
-                      rel="noreferrer" 
-                      className="px-5 py-2.5 rounded-full bg-white/10 border border-white/10 text-white font-sans text-sm hover:bg-brand-orange hover:border-brand-orange transition-all hover:scale-105"
-                    >
-                      LinkedIn
-                    </a>
-                    <a 
-                      href="https://instagram.com/ag_bfrees" 
-                      target="_blank" 
-                      rel="noreferrer" 
-                      className="px-5 py-2.5 rounded-full bg-white/10 border border-white/10 text-white font-sans text-sm hover:bg-brand-orange hover:border-brand-orange transition-all hover:scale-105"
-                    >
-                      Instagram
-                    </a>
-                  </div>
-                </div>
-              </div>
-
             </div>
-          </div>
 
+            {/* E-mail */}
+            <div className="flex items-start gap-6 group">
+              <div className="w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center p-3 shrink-0 group-hover:border-brand-orange/50 transition-colors">
+                <img src={imgCircledEnvelope} alt="E-mail" className="w-full h-full object-contain filter invert opacity-90 group-hover:opacity-100 transition-opacity" />
+              </div>
+              <div>
+                <h3 className="font-sans font-medium text-2xl md:text-3xl text-white mb-2">E-mail</h3>
+                <a href="mailto:contato@bfrees.com.br" className="font-sans text-white/70 text-lg md:text-xl hover:text-brand-orange transition-colors">
+                  contato@bfrees.com.br
+                </a>
+              </div>
+            </div>
+
+            {/* Siga a BFrees */}
+            <div className="flex items-start gap-6 group">
+              <div className="w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center p-3 shrink-0 group-hover:border-brand-orange/50 transition-colors">
+                <img src={imgGoodQuality} alt="Siga a BFrees" className="w-full h-full object-contain filter invert opacity-90 group-hover:opacity-100 transition-opacity" />
+              </div>
+              <div>
+                <h3 className="font-sans font-medium text-2xl md:text-3xl text-white mb-3">Siga a BFrees</h3>
+                <div className="flex items-center gap-4">
+                  <a
+                    href="https://linkedin.com/company/bfrees"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="px-5 py-2.5 rounded-full bg-white/10 border border-white/10 text-white font-sans text-sm hover:bg-brand-orange hover:border-brand-orange transition-all hover:scale-105"
+                  >
+                    LinkedIn
+                  </a>
+                  <a
+                    href="https://instagram.com/ag_bfrees"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="px-5 py-2.5 rounded-full bg-white/10 border border-white/10 text-white font-sans text-sm hover:bg-brand-orange hover:border-brand-orange transition-all hover:scale-105"
+                  >
+                    Instagram
+                  </a>
+                </div>
+              </div>
+            </div>
+
+          </div>
         </div>
+
       </div>
-    </section>
+    </div>
+    </section >
   );
 };
