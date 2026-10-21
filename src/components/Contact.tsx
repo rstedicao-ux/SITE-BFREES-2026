@@ -121,59 +121,56 @@ export const Contact: FC = () => {
                     <a href="tel:+551134593030" className="hover:text-brand-orange transition-colors">
                       +55 11 3459-3030
                     </a>
-                    <a href="tel:+551134453980" className="hover:text-brand-orange transition-colors">
-                      +55 11 3445-3980
+                  </div>
+                </div>
+              </div>
+
+              {/* E-mail */}
+              <div className="flex items-start gap-6 group">
+                <div className="w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center p-3 shrink-0 group-hover:border-brand-orange/50 transition-colors">
+                  <img src={imgCircledEnvelope} alt="E-mail" className="w-full h-full object-contain filter invert opacity-90 group-hover:opacity-100 transition-opacity" />
+                </div>
+                <div>
+                  <h3 className="font-sans font-medium text-2xl md:text-3xl text-white mb-2">E-mail</h3>
+                  <a href="mailto:contato@bfrees.com.br" className="font-sans text-white/70 text-lg md:text-xl hover:text-brand-orange transition-colors">
+                    contato@bfrees.com.br
+                  </a>
+                </div>
+              </div>
+
+              {/* Siga a BFrees */}
+              <div className="flex items-start gap-6 group">
+                <div className="w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center p-3 shrink-0 group-hover:border-brand-orange/50 transition-colors">
+                  <img src={imgGoodQuality} alt="Siga a BFrees" className="w-full h-full object-contain filter invert opacity-90 group-hover:opacity-100 transition-opacity" />
+                </div>
+                <div>
+                  <h3 className="font-sans font-medium text-2xl md:text-3xl text-white mb-3">Siga a BFrees</h3>
+                  <div className="flex items-center gap-4">
+                    <a
+                      href="https://linkedin.com/company/bfrees"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="px-5 py-2.5 rounded-full bg-white/10 border border-white/10 text-white font-sans text-sm hover:bg-brand-orange hover:border-brand-orange transition-all hover:scale-105"
+                    >
+                      LinkedIn
+                    </a>
+                    <a
+                      href="https://instagram.com/ag_bfrees"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="px-5 py-2.5 rounded-full bg-white/10 border border-white/10 text-white font-sans text-sm hover:bg-brand-orange hover:border-brand-orange transition-all hover:scale-105"
+                    >
+                      Instagram
                     </a>
                   </div>
                 </div>
               </div>
 
-            {/* E-mail */}
-            <div className="flex items-start gap-6 group">
-              <div className="w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center p-3 shrink-0 group-hover:border-brand-orange/50 transition-colors">
-                <img src={imgCircledEnvelope} alt="E-mail" className="w-full h-full object-contain filter invert opacity-90 group-hover:opacity-100 transition-opacity" />
-              </div>
-              <div>
-                <h3 className="font-sans font-medium text-2xl md:text-3xl text-white mb-2">E-mail</h3>
-                <a href="mailto:contato@bfrees.com.br" className="font-sans text-white/70 text-lg md:text-xl hover:text-brand-orange transition-colors">
-                  contato@bfrees.com.br
-                </a>
-              </div>
             </div>
-
-            {/* Siga a BFrees */}
-            <div className="flex items-start gap-6 group">
-              <div className="w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center p-3 shrink-0 group-hover:border-brand-orange/50 transition-colors">
-                <img src={imgGoodQuality} alt="Siga a BFrees" className="w-full h-full object-contain filter invert opacity-90 group-hover:opacity-100 transition-opacity" />
-              </div>
-              <div>
-                <h3 className="font-sans font-medium text-2xl md:text-3xl text-white mb-3">Siga a BFrees</h3>
-                <div className="flex items-center gap-4">
-                  <a
-                    href="https://linkedin.com/company/bfrees"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="px-5 py-2.5 rounded-full bg-white/10 border border-white/10 text-white font-sans text-sm hover:bg-brand-orange hover:border-brand-orange transition-all hover:scale-105"
-                  >
-                    LinkedIn
-                  </a>
-                  <a
-                    href="https://instagram.com/ag_bfrees"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="px-5 py-2.5 rounded-full bg-white/10 border border-white/10 text-white font-sans text-sm hover:bg-brand-orange hover:border-brand-orange transition-all hover:scale-105"
-                  >
-                    Instagram
-                  </a>
-                </div>
-              </div>
-            </div>
-
           </div>
-        </div>
 
+        </div>
       </div>
-    </div>
     </section >
   );
 };
