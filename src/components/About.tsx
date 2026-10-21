@@ -25,8 +25,14 @@ const Counter: FC<{ end: number; suffix?: string; sep?: boolean }> = ({ end, suf
 // ─── Main Component ───────────────────────────────────────────────────────────
 export const About: FC<{ onOpenBudget: () => void }> = ({ onOpenBudget }) => {
   const [scale, setScale] = useState(1);
+  const [isMobile, setIsMobile] = useState(false);
+
   useEffect(() => {
-    const update = () => setScale(Math.min(window.innerWidth / 1920, 1.2));
+    const update = () => {
+      const w = window.innerWidth;
+      setIsMobile(w < 768);
+      setScale(Math.min(w / 1920, 1.2));
+    };
     update();
     window.addEventListener('resize', update);
     return () => window.removeEventListener('resize', update);
@@ -38,10 +44,11 @@ export const About: FC<{ onOpenBudget: () => void }> = ({ onOpenBudget }) => {
     <section
       id="sobre"
       className="w-full overflow-hidden relative"
-      style={{ height: FRAME_H * scale }}
+      style={{ height: isMobile ? 'auto' : FRAME_H * scale }}
     >
+      {/* ── DESKTOP VIEW (md+) ── */}
       <div
-        className="absolute overflow-hidden"
+        className="hidden md:block absolute overflow-hidden"
         style={{
           transform: `scale(${scale})`,
           transformOrigin: 'top center',
@@ -311,6 +318,88 @@ export const About: FC<{ onOpenBudget: () => void }> = ({ onOpenBudget }) => {
 
 
 
+      </div>
+
+      {/* ── MOBILE VIEW (< md): Imagem no topo, texto embaixo ── */}
+      <div className="block md:hidden w-full bg-white text-black py-12 px-5">
+        {/* 1. Vídeo 1 (Motion principal) */}
+        <div className="w-full h-52 sm:h-64 rounded-3xl overflow-hidden bg-black shadow-lg mb-10 relative">
+          <video autoPlay muted loop playsInline className="w-full h-full object-cover pointer-events-none">
+            <source src="/sobre-nos/video 1.mp4" type="video/mp4" />
+          </video>
+        </div>
+
+        {/* 2. Sobre a Bfrees: Imagem/Vídeo 2 no topo, texto embaixo */}
+        <div className="mb-12">
+          {/* Imagem / Vídeo 2 no topo */}
+          <div className="w-full h-64 sm:h-72 rounded-3xl overflow-hidden bg-[#D9D9D9] shadow-md mb-6 relative">
+            <video autoPlay muted loop playsInline className="w-full h-full object-cover">
+              <source src="/sobre-nos/video 2.mp4" type="video/mp4" />
+            </video>
+          </div>
+
+          {/* Texto embaixo */}
+          <div className="text-left">
+            <p className="font-['Ubuntu'] font-bold text-xs uppercase tracking-widest text-[#ea8100] mb-2">
+              Sobre a Bfrees
+            </p>
+            <h2 className="font-['Ubuntu'] font-bold text-2xl sm:text-3xl text-black leading-tight mb-4">
+              Transformamos estratégia em experiência.
+            </h2>
+            <p className="font-['Ubuntu'] text-black/80 text-sm sm:text-base leading-relaxed mb-6">
+              A BFrees é uma produtora de eventos e brand experience que cria experiências presenciais para aproximar marcas e pessoas. Atuamos em feiras e estandes, eventos corporativos, convenções, lançamentos, exposições e projetos especiais, sempre buscando traduzir a essência e os objetivos de cada marca em experiências relevantes para o público.
+            </p>
+            <button
+              onClick={onOpenBudget}
+              className="w-48 h-12 rounded-full border border-black font-['Jaapokki_subtract'] text-lg text-black hover:bg-black hover:text-white transition-colors flex items-center justify-center"
+            >
+              Contate-nos
+            </button>
+          </div>
+        </div>
+
+        {/* 3. Nossa Expertise */}
+        <div className="text-left mb-12 pt-6 border-t border-black/10">
+          <h3 className="font-['Ubuntu'] font-bold text-2xl text-black leading-tight mb-3">
+            Nossa Expertise
+          </h3>
+          <p className="font-['Ubuntu'] text-black/80 text-sm sm:text-base leading-relaxed">
+            Para fazer cada projeto acontecer, reunimos diferentes frentes em uma operação integrada. Atuamos com cenografia e projetos 3D, produção, tecnologia e audiovisual, ativações, hospitalidade, credenciamento e gestão de fornecedores, acompanhando todas as etapas para garantir uma entrega consistente do planejamento à operação.
+          </p>
+        </div>
+
+        {/* 4. CTA Card (Card com o vídeo do olho no fundo, textos e botão) */}
+        <div className="w-full rounded-3xl overflow-hidden relative bg-[#111] p-6 sm:p-8 text-center text-white shadow-xl">
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover pointer-events-none opacity-50"
+          >
+            <source src="/sobre-nos/video 3.mov" type="video/quicktime" />
+            <source src="/sobre-nos/video 3.mov" type="video/mp4" />
+          </video>
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/70 to-black/85 pointer-events-none" />
+
+          <div className="relative z-10 flex flex-col items-center">
+            <p className="font-['Ubuntu'] text-sm sm:text-base text-white/90 mb-2">
+              Seu próximo projeto pode começar aqui.
+            </p>
+            <h4 className="font-['Ubuntu'] font-medium text-xl sm:text-2xl text-[#FF8D00] leading-snug mb-3">
+              Conte para a gente o desafio, o objetivo e onde você quer chegar.
+            </h4>
+            <p className="font-['Ubuntu'] text-xs sm:text-sm text-white/90 leading-relaxed mb-6 max-w-sm">
+              A BFrees transforma isso em uma experiência pensada para acontecer de verdade.
+            </p>
+            <button
+              onClick={onOpenBudget}
+              className="w-48 h-12 rounded-full border border-white text-white font-['Jaapokki_subtract'] text-base bg-white/10 backdrop-blur-sm hover:bg-[#FF8D00] hover:border-[#FF8D00] transition-colors flex items-center justify-center shadow-lg"
+            >
+              Fale com a Bfrees
+            </button>
+          </div>
+        </div>
       </div>
     </section>
   );

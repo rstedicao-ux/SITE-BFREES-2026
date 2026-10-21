@@ -334,10 +334,13 @@ function ChevronRight() {
 export const Brands: FC<{ onOpenBudget: () => void }> = ({ onOpenBudget }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [scale, setScale] = useState(1);
+  const [isMobile, setIsMobile] = useState(false);
+  const [mobileBrandIdx, setMobileBrandIdx] = useState(0);
 
   useEffect(() => {
     const update = () => {
       const w = window.innerWidth;
+      setIsMobile(w < 768);
       setScale(Math.min(w / 1920, 1.2));
     };
     update();
@@ -345,15 +348,24 @@ export const Brands: FC<{ onOpenBudget: () => void }> = ({ onOpenBudget }) => {
     return () => window.removeEventListener('resize', update);
   }, []);
 
+  useEffect(() => {
+    if (!isMobile) return;
+    const timer = setInterval(() => {
+      setMobileBrandIdx((prev) => (prev + 1) % BRANDS.length);
+    }, 2400);
+    return () => clearInterval(timer);
+  }, [isMobile]);
+
   return (
     <section
       ref={containerRef}
       id="marcas"
       className="w-full overflow-hidden relative"
-      style={{ height: 1359 * scale }}
+      style={{ height: isMobile ? 'auto' : 1359 * scale }}
     >
+      {/* ── DESKTOP VIEW (md+) ── */}
       <div
-        className="absolute overflow-hidden"
+        className="hidden md:block absolute overflow-hidden"
         style={{
           transform: `scale(${scale})`,
           transformOrigin: 'top center',
@@ -556,6 +568,85 @@ export const Brands: FC<{ onOpenBudget: () => void }> = ({ onOpenBudget }) => {
           </div>
         ))}
       </div>
+
+      {/* ── MOBILE VIEW (< md): Imagem no topo, texto embaixo ── */}
+      <div className="block md:hidden w-full relative overflow-hidden bg-gradient-to-b from-[#FEB701] via-[#F39102] to-[#c85600] py-12 px-5 text-white">
+        {/* Top vignette */}
+        <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-[#ed8202] to-transparent pointer-events-none" />
+
+        {/* 1. Imagem no topo com o card de marca centralizado */}
+        <div className="relative w-full max-w-sm mx-auto flex flex-col items-center">
+          <div className="relative w-64 h-72 flex items-center justify-center">
+            <img
+              src={womanImg}
+              alt="Mulher com mão estendida"
+              className="w-full h-full object-contain object-top drop-shadow-2xl"
+            />
+          </div>
+
+          {/* Card da Marca interativo sobre a mão */}
+          <div
+            onClick={onOpenBudget}
+            className="w-64 h-44 -mt-16 z-20 rounded-2xl bg-white shadow-2xl flex flex-col items-center justify-center p-4 border border-white/80 cursor-pointer relative"
+          >
+            <div className="w-full h-24 flex items-center justify-center">
+              <img
+                src={BRANDS[mobileBrandIdx].logo}
+                alt={BRANDS[mobileBrandIdx].name}
+                className="max-h-16 max-w-[85%] object-contain"
+                style={{ filter: BRANDS[mobileBrandIdx].black ? 'brightness(0)' : 'none' }}
+              />
+            </div>
+            {/* Dots navigation */}
+            <div className="flex gap-1.5 mt-1">
+              {BRANDS.map((_, i) => (
+                <button
+                  key={i}
+                  aria-label={`Ver marca ${i + 1}`}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setMobileBrandIdx(i);
+                  }}
+                  className={`h-1.5 rounded-full transition-all ${
+                    i === mobileBrandIdx ? 'w-4 bg-[#ea8100]' : 'w-1.5 bg-black/20'
+                  }`}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* 2. Texto embaixo */}
+        <div className="text-center mt-8 max-w-md mx-auto">
+          <h2 className="font-['Ubuntu'] font-bold text-3xl sm:text-4xl text-white leading-tight tracking-tight mb-4">
+            Ideias que <span className="text-[#24214d]">ganham vida.</span>
+          </h2>
+          <p className="font-['Ubuntu'] font-normal text-white/95 text-base leading-relaxed mb-8">
+            Eventos, estandes, ativações e experiências de marca criados para conectar pessoas, fortalecer marcas e transformar estratégias em experiências reais.
+          </p>
+        </div>
+
+        {/* 3. Pilares em cards legíveis */}
+        <div className="grid grid-cols-1 gap-3.5 max-w-md mx-auto pt-6 border-t border-white/20">
+          {[
+            { icon: '/icon-lampada.svg', title: 'Criatividade com propósito', body: 'Ideias que saem do papel e geram impacto real.' },
+            { icon: '/icon-negocio.svg', title: 'Parcerias que transformam', body: 'Trabalhamos lado a lado com grandes marcas.' },
+            { icon: '/icon-apresentacao.svg', title: 'Incomum que fala por si', body: 'Estratégia, execução e resultados mensuráveis.' },
+            { icon: '/icon-coracao.svg', title: 'Experiências que ficam na memória', body: 'Criamos momentos que marcam e inspiram.' },
+          ].map((item, idx) => (
+            <div key={idx} className="flex items-start gap-4 p-4 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/15">
+              <div className="w-11 h-11 rounded-full border border-white/50 flex-shrink-0 flex items-center justify-center p-2">
+                <img src={item.icon} alt="" className="w-full h-full object-contain brightness-0 invert" />
+              </div>
+              <div className="text-left">
+                <h3 className="font-['Ubuntu'] font-bold text-base text-white leading-snug mb-1">{item.title}</h3>
+                <p className="font-['Ubuntu'] text-xs sm:text-sm text-white/80 leading-relaxed">{item.body}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
     </section>
   );
 };
+
