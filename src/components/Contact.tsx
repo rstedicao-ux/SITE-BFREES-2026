@@ -117,12 +117,16 @@ export const Contact: FC = () => {
                 </div>
                 <div>
                   <h3 className="font-sans font-medium text-2xl md:text-3xl text-white mb-2">Telefone</h3>
-                  <a href="https://wa.me/5511999999999" target="_blank" rel="noreferrer" className="font-sans text-white/70 text-lg md:text-xl hover:text-brand-orange transition-colors">
-                    +55 11 3459-3030</p>
-                  <p>+55 11 3459-3030</p>
-                </a>
+                  <div className="flex flex-col gap-1 font-sans text-white/70 text-lg md:text-xl">
+                    <a href="tel:+551134593030" className="hover:text-brand-orange transition-colors">
+                      +55 11 3459-3030
+                    </a>
+                    <a href="tel:+551134453980" className="hover:text-brand-orange transition-colors">
+                      +55 11 3445-3980
+                    </a>
+                  </div>
+                </div>
               </div>
-            </div>
 
             {/* E-mail */}
             <div className="flex items-start gap-6 group">
